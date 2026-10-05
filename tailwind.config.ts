@@ -12,7 +12,7 @@ const config: Config = {
     container: {
       center: true,
       padding: { DEFAULT: "1rem", sm: "1.5rem", lg: "2rem" },
-      screens: { "2xl": "1280px" },
+      screens: { sm: "640px", md: "768px", lg: "1024px", xl: "1280px", "2xl": "1280px" },
     },
     // Radios chicos y planos: de 2 a 6 px. Nada de esquinas de píldora salvo `full`.
     borderRadius: {
@@ -61,7 +61,7 @@ const config: Config = {
       },
       // Escala fluida
       fontSize: {
-        display: ["clamp(2.5rem, 1.55rem + 4.2vw, 5.25rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
+        display: ["clamp(2.5rem, 1.6rem + 3.9vw, 4.75rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
         h2: ["clamp(1.875rem, 1.35rem + 2.3vw, 3.5rem)", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
         h3: ["clamp(1.25rem, 1.1rem + 0.65vw, 1.75rem)", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
         lead: ["clamp(1.0625rem, 1rem + 0.3vw, 1.3125rem)", { lineHeight: "1.5" }],
