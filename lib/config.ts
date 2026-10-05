@@ -18,7 +18,8 @@ export const WA_DEMO = whatsappLink("Hola, quiero ver una demostración de Nexo 
 export const WA_SUPPORT = whatsappLink("Hola, tengo una consulta sobre Nexo ERP.");
 
 /** TODO(luis): definir el dominio final. Se usa para canonical, Open Graph, sitemap y robots. */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.CF_PAGES_URL ?? "http://localhost:3000";
 
 /**
  * Las capturas reales van en /public/screens/ (ver public/screens/README.md).

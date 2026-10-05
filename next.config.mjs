@@ -3,6 +3,10 @@ import { fileURLToPath } from "node:url";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
+// Hosting estático (Cloudflare Pages): se exporta a /out. Cloudflare define CF_PAGES=1 durante su build;
+// en local se puede probar con STATIC_EXPORT=1.
+const staticExport = process.env.STATIC_EXPORT === "1" || process.env.CF_PAGES === "1";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,7 +14,9 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST || ".next",
   // Hay otro package-lock.json en una carpeta superior; fijamos la raíz de este proyecto.
   outputFileTracingRoot: root,
-  images: { formats: ["image/avif", "image/webp"] },
   poweredByHeader: false,
+  ...(staticExport
+    ? { output: "export", images: { unoptimized: true } }
+    : { images: { formats: ["image/avif", "image/webp"] } }),
 };
 export default nextConfig;

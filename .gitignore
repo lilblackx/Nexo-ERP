@@ -10,3 +10,4 @@ next-env.d.ts
 # Documento de capturas con datos personales
 *.docx
 .next-dev
+out
