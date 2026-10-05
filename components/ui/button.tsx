@@ -4,22 +4,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-sans font-semibold transition-colors duration-200 ease-nexo disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary:
-          "bg-primary text-white shadow-btn hover:-translate-y-px hover:bg-primary-light active:bg-primary-dark",
-        secondary:
-          "border border-line bg-card text-fg shadow-card hover:border-primary-light/50 hover:bg-rowhover",
-        ghost: "text-fg-slate hover:bg-rowhover hover:text-primary",
-        // Sobre fondo azul (banner final)
-        inverse: "bg-white text-primary shadow-card hover:-translate-y-px hover:bg-rowhover",
-        whatsapp: "bg-success text-white shadow-card hover:-translate-y-px hover:bg-success-text",
+        primary: "bg-primary text-white hover:bg-primary-light active:bg-primary-dark",
+        outline: "border border-line bg-card text-fg hover:border-primary hover:text-primary",
+        // Sobre secciones azules
+        inverse: "bg-white text-primary hover:bg-tint-100",
+        "outline-inverse": "border border-white/40 text-white hover:border-white hover:bg-white/10",
+        whatsapp: "bg-success text-white hover:bg-success-text",
       },
       size: {
-        sm: "h-9 px-3.5",
-        md: "h-11 px-5",
+        sm: "h-9 px-3.5 text-[13px]",
+        md: "h-11 px-5 text-sm",
         lg: "h-12 px-6 text-[15px]",
       },
     },

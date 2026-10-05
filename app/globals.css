@@ -5,30 +5,89 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 6.5rem;
     background-color: #f8fafc;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-page font-sans text-fg-medium antialiased;
+    @apply bg-page font-sans text-base text-fg-slate antialiased;
+    font-feature-settings: "kern", "liga";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold text-fg;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
-    background: rgb(21 101 192 / 0.2);
+    background: rgb(13 71 161 / 0.18);
   }
 
   :focus-visible {
     @apply outline-none ring-2 ring-primary-light ring-offset-2 ring-offset-page;
   }
+  .on-blue :focus-visible {
+    @apply ring-white ring-offset-primary-deep;
+  }
 }
 
 @layer utilities {
+  /* Cifras: monoespaciadas, tabulares. */
   .num {
-    @apply font-mono font-medium tracking-tight tabular-nums;
+    @apply font-mono font-medium tabular-nums;
+    letter-spacing: -0.02em;
   }
 
-  .card-surface {
-    @apply border border-line bg-card shadow-card;
+  /* Folio de sección, como en un libro contable. */
+  .folio {
+    @apply font-mono text-[13px] font-medium tabular-nums text-fg-muted;
+  }
+
+  /* Línea de dibujo técnico: se traza una sola vez al entrar en viewport. */
+  .draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 1400ms cubic-bezier(0.22, 0.8, 0.24, 1);
+    transition-delay: var(--d, 0ms);
+  }
+  .is-drawn .draw {
+    stroke-dashoffset: 0;
+  }
+  .draw-fade {
+    opacity: 0;
+    transition: opacity 600ms cubic-bezier(0.22, 0.8, 0.24, 1);
+    transition-delay: var(--d, 0ms);
+  }
+  .is-drawn .draw-fade {
+    opacity: 1;
+  }
+
+  /* Entrada sutil, una sola vez. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 560ms cubic-bezier(0.22, 0.8, 0.24, 1),
+      transform 560ms cubic-bezier(0.22, 0.8, 0.24, 1);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -42,5 +101,16 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .draw {
+    stroke-dashoffset: 0;
+  }
+  .draw-fade {
+    opacity: 1;
   }
 }
