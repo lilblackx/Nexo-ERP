@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env*
+# Capturas de la app con datos personales reales: nunca versionar ni servir.
+/reference/
+.claude/
+# Documento de capturas con datos personales
+*.docx
