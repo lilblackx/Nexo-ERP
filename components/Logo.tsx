@@ -51,7 +51,7 @@ export default function Logo({
           ERP
         </span>
       </span>
-      <span className="sr-only"> — sistema de gestión para distribuidoras</span>
+      <span className="sr-only">, sistema de gestión para distribuidoras</span>
     </span>
   );
 }

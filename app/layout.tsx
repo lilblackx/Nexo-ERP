@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { SITE_NAME, SITE_TITLE, siteDescription, softwareJsonLd } from "@/lib/seo";
+import { SITE_URL } from "@/lib/config";
 
 /*
  * Tipografía (por qué):
@@ -26,8 +28,25 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexo ERP",
-  description: "ERP de escritorio para distribuidoras y mayoristas en Venezuela.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: siteDescription(),
+  applicationName: SITE_NAME,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "es_VE",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: siteDescription(),
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: siteDescription(),
+  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -39,7 +58,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es-VE" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd()) }}
+        />
+      </body>
     </html>
   );
 }

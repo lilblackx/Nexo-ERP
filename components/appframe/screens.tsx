@@ -63,7 +63,7 @@ export function PanelScreen({ dense }: P) {
         </div>
         <div className="rounded-sm border border-line bg-card p-2.5">
           <p className="text-[11px] font-semibold text-fg">Cajas activas</p>
-          <p className="text-[9px] text-fg-muted">Estado de turnos abiertos hoy</p>
+          <p className="text-[9px] text-fg-muted">Cajas abiertas hoy</p>
           <div className="mt-2 flex items-center justify-between rounded-sm bg-field px-2 py-1.5 text-[10px]">
             <span className="text-fg-slate">{INVOICE.caja}</span>
             <Chip tone="success">ABIERTA</Chip>
