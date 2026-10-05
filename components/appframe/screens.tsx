@@ -484,3 +484,39 @@ export function ReportesScreen({ dense }: P) {
   );
 }
 
+
+/* ------------------------- Nueva factura (viva) ----------------------- */
+
+export function NuevaFacturaScreen({ dense, rows }: P & { rows: number }) {
+  const lines = INVOICE.lines.slice(0, rows);
+  const total = lines.reduce((s, l) => s + l.boxes * l.price, 0);
+  return (
+    <div>
+      <Crumb>Facturación / Nueva factura</Crumb>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <Title sub={`Cliente: ${INVOICE.client} · Vendedor: ${INVOICE.seller}`}>Nueva factura</Title>
+        <Chip tone="success">Caja abierta: {INVOICE.caja}</Chip>
+      </div>
+      <Grid
+        className="mt-2"
+        dense={dense}
+        cols={[
+          { label: "Producto" },
+          { label: "Cajas", align: "right", mono: true },
+          { label: "Precio 1", align: "right", min: "sm", mono: true },
+          { label: "Subtotal", align: "right", mono: true },
+        ]}
+        rows={lines.map((l) => [l.name, fmt0(l.boxes), usd(l.price), usd(l.boxes * l.price)])}
+      />
+      <div className="mt-2 flex items-end justify-between border border-line bg-card px-3 py-2">
+        <span className="text-[10px] text-fg-muted">
+          {lines.length} {lines.length === 1 ? "renglón" : "renglones"}
+        </span>
+        <span className="text-right">
+          <span className="block text-[9px] text-fg-muted">Total</span>
+          <span className="num text-[20px] leading-none text-fg">{usd(total)}</span>
+        </span>
+      </div>
+    </div>
+  );
+}

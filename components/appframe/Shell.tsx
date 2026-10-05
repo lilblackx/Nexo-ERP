@@ -3,7 +3,7 @@ import { LogoMark } from "@/components/Logo";
 import { COMPANY, RATES, bs, gap, pct } from "./data";
 import { cn } from "@/lib/utils";
 
-export type ScreenId = "panel" | "facturacion" | "compras" | "productos" | "tasas" | "comisiones" | "reportes";
+export type ScreenId = "panel" | "nueva" | "facturacion" | "compras" | "productos" | "tasas" | "comisiones" | "reportes";
 
 /** Menú igual al de la app, en el mismo orden. */
 const MENU = [
@@ -29,6 +29,7 @@ const MENU = [
 
 export const ACTIVE_ITEM: Record<ScreenId, string> = {
   panel: "Panel General",
+  nueva: "Facturación",
   facturacion: "Facturación",
   compras: "Compras",
   productos: "Productos",
@@ -117,26 +118,26 @@ export function Sidebar({ active, className }: { active: string; className?: str
 }
 
 /** Barra superior permanente de la app: tasa BCV, dólar paralelo y hora de actualización. */
-export function TopBar() {
+export function TopBar({ dense }: { dense?: boolean }) {
   return (
     <div className="flex h-8 items-center justify-between gap-3 border-b border-line bg-card px-3 text-[10px]">
-      <div className="flex min-w-0 items-center gap-3 whitespace-nowrap">
+      <div className="flex min-w-0 items-center gap-3 overflow-hidden whitespace-nowrap">
         <span className="text-fg-muted">
           Tasa BCV: <b className="num text-fg">{bs(RATES.bcv)}</b>
         </span>
         <span className="hidden text-fg-muted min-[420px]:inline">
           Dólar paralelo: <b className="num text-fg">{bs(RATES.paralelo)}</b>
         </span>
-        <span className="hidden text-fg-muted lg:inline">
+        <span className={cn("hidden text-fg-muted", !dense && "lg:inline")}>
           Brecha: <b className="num text-fg">{pct(gap(RATES.bcv, RATES.paralelo))}</b>
         </span>
-        <span className="rounded-sm bg-warning-bg px-1 py-px text-[8.5px] font-medium text-warning-text">
+        <span className="shrink-0 rounded-sm bg-warning-bg px-1 py-px text-[8.5px] font-medium text-warning-text">
           valores de ejemplo
         </span>
       </div>
       <div className="flex shrink-0 items-center gap-2 text-fg-muted">
-        <span className="hidden sm:inline">Actualizado hace 1 min</span>
-        <span className="hidden h-6 w-36 items-center gap-1.5 rounded-sm border border-line px-2 text-fg-light md:flex">
+        <span className={cn("hidden", !dense && "sm:inline")}>Actualizado hace 1 min</span>
+        <span className={cn("hidden h-6 w-36 items-center gap-1.5 rounded-sm border border-line px-2 text-fg-light", !dense && "md:flex")}>
           Buscar en el sistema...
         </span>
         <Bell className="h-3.5 w-3.5" aria-hidden />

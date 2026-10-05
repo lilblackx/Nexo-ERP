@@ -4,6 +4,7 @@ import {
   ComisionesScreen,
   ComprasScreen,
   FacturacionScreen,
+  NuevaFacturaScreen,
   PanelScreen,
   ProductosScreen,
   ReportesScreen,
@@ -14,6 +15,7 @@ export type { ScreenId };
 
 export const SCREEN_LABEL: Record<ScreenId, string> = {
   panel: "Panel general",
+  nueva: "Nueva factura",
   facturacion: "Facturación",
   compras: "Compras",
   productos: "Productos",
@@ -30,14 +32,20 @@ export const SCREEN_LABEL: Record<ScreenId, string> = {
 export default function AppFrame({
   screen,
   cobro,
+  rows = 5,
   dense,
+  short,
   bleed,
   tone = "light",
   className,
 }: {
   screen: ScreenId;
   cobro?: boolean;
+  /** Solo para `nueva`: cuántos renglones lleva la factura. */
+  rows?: number;
   dense?: boolean;
+  /** Altura mínima menor, para mostrar pantallas con poco contenido. */
+  short?: boolean;
   bleed?: boolean;
   tone?: "light" | "dark";
   className?: string;
@@ -57,10 +65,11 @@ export default function AppFrame({
       <div className="flex">
         <Sidebar active={ACTIVE_ITEM[screen]} className="hidden md:block" />
         <div className="min-w-0 flex-1">
-          <TopBar />
-          <div className="relative min-h-[430px] p-3">
+          <TopBar dense={dense} />
+          <div className={cn("relative p-3", short ? "min-h-[330px]" : "min-h-[430px]")}>
             {screen === "panel" && <PanelScreen dense={dense} />}
             {screen === "facturacion" && <FacturacionScreen dense={dense} cobro={cobro} />}
+            {screen === "nueva" && <NuevaFacturaScreen dense={dense} rows={rows} />}
             {screen === "compras" && <ComprasScreen dense={dense} />}
             {screen === "productos" && <ProductosScreen dense={dense} />}
             {screen === "tasas" && <TasasScreen dense={dense} />}
