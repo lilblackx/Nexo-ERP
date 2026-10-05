@@ -117,7 +117,7 @@ export default function Architecture() {
           dibujaríamos para tu galpón.
         </SectionHead>
 
-        <div className="mt-12 grid grid-cols-12 gap-x-8 gap-y-10">
+        <div className="mt-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 gap-y-10">
           <div ref={ref} className="col-span-12 lg:col-span-7">
             <Blueprint drawn={inView} />
             <p className="mt-3 font-mono text-[12px] text-tint-300">PLANO 01 · TOPOLOGÍA · SIN ESCALA</p>

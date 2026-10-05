@@ -109,7 +109,7 @@ export default function MixedPayment() {
           cambia la tasa y mira cuándo cuadra. Todo con valores de ejemplo.
         </SectionHead>
 
-        <div className="mt-12 grid grid-cols-12 gap-x-8 gap-y-10">
+        <div className="mt-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 gap-y-10">
           <div className="col-span-12 lg:col-span-5">
             <p className="folio">Factura de ejemplo · {INVOICE.number}</p>
             <p className="mt-4 text-sm text-fg-muted">Total a pagar</p>
@@ -214,7 +214,7 @@ export default function MixedPayment() {
 
           {/* Brecha BCV vs. paralelo */}
           <div className="col-span-12 border-t border-line pt-8">
-            <div className="grid grid-cols-12 gap-x-8 gap-y-6">
+            <div className="grid grid-cols-12 gap-x-2 lg:gap-x-8 gap-y-6">
               <div className="col-span-12 lg:col-span-5">
                 <h3 className="text-h3">La tasa que uses cambia lo que cobras.</h3>
                 <p className="mt-3 max-w-[44ch] text-[15px] leading-relaxed text-fg-medium">

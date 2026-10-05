@@ -91,6 +91,14 @@
   }
 }
 
+/* Secciones bajo el pliegue: el navegador omite su layout y pintura hasta que se acercan.
+   Reduce el trabajo del hilo principal en la primera carga (móviles y conexiones lentas). */
+main > section:not(#inicio),
+body > footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

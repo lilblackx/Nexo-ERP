@@ -4,6 +4,9 @@ export const CONTACTS = [
   { number: "584246010970", display: "+58 424-6010970" },
 ] as const;
 
+/** Correo de contacto. Única fuente del correo en el sitio. */
+export const CONTACT_EMAIL = "luisangelfd18@gmail.com";
+
 /** Línea principal: la usan los botones de un solo destino. */
 export const WHATSAPP_NUMBER = CONTACTS[0].number;
 

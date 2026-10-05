@@ -22,7 +22,7 @@ export default function SectionHead({
   return (
     <div
       className={cn(
-        "grid grid-cols-12 gap-x-6 gap-y-4 border-t pt-5",
+        "grid grid-cols-12 gap-x-2 md:gap-x-6 gap-y-4 border-t pt-5",
         onBlue ? "border-white/25" : "border-line",
         className,
       )}

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useInView } from "@/lib/hooks";
 import AppFrame, { SCREEN_LABEL, type ScreenId } from "@/components/appframe/AppFrame";
+import LazyFrame from "@/components/appframe/LazyFrame";
 import SectionHead from "@/components/SectionHead";
 import { cn } from "@/lib/utils";
 
@@ -114,6 +116,23 @@ const CHAPTERS: Chapter[] = [
   },
 ];
 
+/**
+ * Pantalla en línea para móvil. Se monta solo cuando está cerca del viewport y nunca en escritorio
+ * (allí se usa el AppFrame sticky): así el HTML inicial no carga siete marcos duplicados.
+ */
+function InlineFrame({ screen, cobro }: { screen: ScreenId; cobro?: boolean }) {
+  const { ref, inView } = useInView<HTMLDivElement>({ rootMargin: "600px 0px" });
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    setMobile(!window.matchMedia("(min-width: 1024px)").matches);
+  }, []);
+  return (
+    <div ref={ref} className="-mr-4 mt-6 min-h-[440px] lg:hidden">
+      {inView && mobile && <AppFrame screen={screen} cobro={cobro} dense />}
+    </div>
+  );
+}
+
 export default function DayStory() {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLLIElement | null)[]>([]);
@@ -142,8 +161,8 @@ export default function DayStory() {
           con datos de ejemplo.
         </SectionHead>
 
-        <div className="mt-14 grid grid-cols-12 gap-x-8">
-          <ol className="col-span-12 lg:col-span-5">
+        <div className="mt-14 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+          <ol className="col-span-12 min-w-0 lg:col-span-5">
             {CHAPTERS.map((c, i) => (
               <li
                 key={c.title}
@@ -175,9 +194,7 @@ export default function DayStory() {
                   {c.extra && <p className="mt-4">{c.extra}</p>}
                 </div>
                 {/* En móvil: la pantalla va en línea, sin sticky */}
-                <div className="-mr-4 mt-6 lg:hidden">
-                  <AppFrame screen={c.screen} cobro={c.cobro} dense />
-                </div>
+                <InlineFrame screen={c.screen} cobro={c.cobro} />
               </li>
             ))}
           </ol>
@@ -185,7 +202,7 @@ export default function DayStory() {
           <div className="relative hidden lg:col-span-7 lg:block">
             <div className="sticky top-32">
               <div key={current.screen + String(current.cobro)} className="animate-fade">
-                <AppFrame screen={current.screen} cobro={current.cobro} dense />
+                <LazyFrame screen={current.screen} cobro={current.cobro} dense minH={520} />
               </div>
               <p className="mt-3 flex items-center justify-between font-mono text-[12px] text-fg-muted">
                 <span>

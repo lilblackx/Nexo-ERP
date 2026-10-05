@@ -17,7 +17,7 @@ const TOOLS = ["Excel", "Otro sistema", "Papel", "Nada todavía"];
 const SERVER = ["Sí", "No", "No sé"];
 
 const inputCls =
-  "h-11 w-full border border-line bg-card px-3 text-[15px] text-fg placeholder:text-fg-light transition-colors hover:border-fg-light focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
+  "h-11 w-full border border-line bg-card px-3 text-[15px] text-fg placeholder:text-fg-muted transition-colors hover:border-fg-light focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
 const labelCls = "mb-1.5 block text-[13px] font-medium text-fg-slate";
 
 export default function LeadForm() {
@@ -52,7 +52,7 @@ export default function LeadForm() {
           Responde lo que sepas. Verás el mensaje tal como llegará por WhatsApp antes de enviarlo.
         </SectionHead>
 
-        <div className="mt-12 grid grid-cols-12 gap-x-8 gap-y-10">
+        <div className="mt-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 gap-y-10">
           <form
             className="col-span-12 bg-card p-5 text-fg sm:p-7 lg:col-span-7"
             onSubmit={(e) => {
@@ -163,27 +163,23 @@ export default function LeadForm() {
               <div className="bg-tint-50 p-4">
                 <div className="ml-auto max-w-[92%] rounded-lg rounded-tr-none bg-success-bg px-3.5 py-2.5 text-[14px] leading-relaxed text-fg shadow-sm" aria-live="polite">
                   <p className="whitespace-pre-line">{message}</p>
-                  <p className="mt-1 flex items-center justify-end gap-1 text-[10px] text-fg-muted">
+                  <p className="mt-1 flex items-center justify-end gap-1 text-[10px] text-fg-medium">
                     ahora <Check className="h-3 w-3 text-primary-light" aria-hidden />
                   </p>
                 </div>
               </div>
             </div>
-            <Button
-              asChild
-              variant="inverse"
-              size="lg"
-              className={cn("mt-5 w-full", !ready && "pointer-events-none opacity-50")}
-            >
-              <a
-                href={ready ? href : undefined}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-disabled={!ready}
-              >
+            {ready ? (
+              <Button asChild variant="inverse" size="lg" className="mt-5 w-full">
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  Abrir WhatsApp con este mensaje
+                </a>
+              </Button>
+            ) : (
+              <Button variant="inverse" size="lg" className="mt-5 w-full" disabled>
                 Abrir WhatsApp con este mensaje
-              </a>
-            </Button>
+              </Button>
+            )}
             {!ready && <p className="mt-2 text-xs text-tint-200">Escribe tu nombre para habilitar el envío.</p>}
           </div>
         </div>

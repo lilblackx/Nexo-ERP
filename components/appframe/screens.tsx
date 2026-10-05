@@ -179,7 +179,7 @@ export function FacturacionScreen({ dense, cobro }: P & { cobro?: boolean }) {
         dense={dense}
         cols={[
           { label: "N° Factura", mono: true },
-          { label: "Cliente" },
+          { label: "Cliente", trunc: true },
           { label: "Vendedor", min: "lg" },
           { label: "Fecha", min: "md" },
           { label: "Condición", min: "lg" },
@@ -228,7 +228,7 @@ export function ComprasScreen({ dense }: P) {
         dense={dense}
         cols={[
           { label: "N° ODC", mono: true },
-          { label: "Proveedor" },
+          { label: "Proveedor", trunc: true },
           { label: "Fecha", min: "md" },
           { label: "Total productos", align: "right", min: "lg", mono: true },
           { label: "Cant. rec.", align: "right", min: "lg", mono: true },
@@ -277,7 +277,7 @@ export function ProductosScreen({ dense }: P) {
         dense={dense}
         cols={[
           { label: "Código", mono: true },
-          { label: "Nombre" },
+          { label: "Nombre", trunc: true },
           { label: "Categoría", min: "lg" },
           { label: "Cantidad", align: "right", min: "md", mono: true },
           { label: "Cajas", align: "right", mono: true },
@@ -352,7 +352,7 @@ export function TasasScreen({ dense }: P) {
         cols={[
           { label: "Fecha", mono: true },
           { label: "Tasa BCV", align: "right", mono: true },
-          { label: "Dólar paralelo", align: "right", mono: true },
+          { label: "Dólar paralelo", align: "right", min: "sm", mono: true },
           { label: "Brecha", align: "right", mono: true },
         ]}
         rows={RATE_HISTORY.map((r) => [r.fecha, bs(r.bcv), bs(r.par), pct(gap(r.bcv, r.par))])}
@@ -393,7 +393,7 @@ export function ComisionesScreen({ dense }: P) {
         dense={dense}
         cols={[
           { label: "Factura", mono: true },
-          { label: "Cliente", min: "sm" },
+          { label: "Cliente", min: "sm", trunc: true },
           { label: "Fecha cálculo", min: "lg" },
           { label: "Líneas", align: "right", min: "lg", mono: true },
           { label: "Monto base", align: "right", min: "md", mono: true },
@@ -463,7 +463,7 @@ export function ReportesScreen({ dense }: P) {
         dense={dense}
         cols={[
           { label: "Factura", mono: true },
-          { label: "Cliente", min: "sm" },
+          { label: "Cliente", min: "sm", trunc: true },
           { label: "Vencimiento", min: "md", mono: true },
           { label: "Saldo pendiente", align: "right", mono: true },
           { label: "Días vencido", align: "right", min: "md", mono: true },
@@ -501,7 +501,7 @@ export function NuevaFacturaScreen({ dense, rows }: P & { rows: number }) {
         className="mt-2"
         dense={dense}
         cols={[
-          { label: "Producto" },
+          { label: "Producto", trunc: true },
           { label: "Cajas", align: "right", mono: true },
           { label: "Precio 1", align: "right", min: "sm", mono: true },
           { label: "Subtotal", align: "right", mono: true },

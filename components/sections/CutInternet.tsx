@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AppFrame from "@/components/appframe/AppFrame";
+import LazyFrame from "@/components/appframe/LazyFrame";
 import { INVOICE, usd } from "@/components/appframe/data";
 import SectionHead from "@/components/SectionHead";
 import { useInView, useReducedMotion } from "@/lib/hooks";
@@ -55,7 +55,7 @@ export default function CutInternet() {
           trabajando sobre la red local.
         </SectionHead>
 
-        <div ref={ref} className="mt-10 grid grid-cols-12 gap-x-6 gap-y-8">
+        <div ref={ref} className="mt-10 grid grid-cols-12 gap-x-2 md:gap-x-6 gap-y-8">
           <div className="col-span-12 flex flex-wrap items-center gap-x-6 gap-y-3">
             <button
               type="button"
@@ -142,7 +142,7 @@ export default function CutInternet() {
                 LAN activa
               </span>
             </p>
-            <AppFrame screen="nueva" rows={nexo} dense short tone="dark" className="border-white/20" />
+            <LazyFrame screen="nueva" rows={nexo} dense short tone="dark" className="border-white/20" minH={360} />
           </div>
 
           <p className="col-span-12 max-w-3xl border-t border-white/25 pt-5 text-[15px] leading-relaxed text-tint-100">

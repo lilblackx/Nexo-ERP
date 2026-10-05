@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Aviso de privacidad | Nexo ERP",
@@ -22,7 +23,7 @@ export default function Privacidad() {
         </div>
       </header>
       <main className="container py-16 sm:py-24">
-        <div className="grid grid-cols-12 gap-x-6">
+        <div className="grid grid-cols-12 gap-x-2 md:gap-x-6">
           <div className="col-span-12 lg:col-span-8 lg:col-start-3">
             <p className="folio">Legal</p>
             <h1 className="mt-2 text-h2">Aviso de privacidad</h1>
@@ -41,7 +42,11 @@ export default function Privacidad() {
               </p>
               <p>
                 Si quieres que borremos una conversación o tienes preguntas sobre tus datos, escríbenos por el mismo
-                canal.
+                canal o a{" "}
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary underline underline-offset-4">
+                  {CONTACT_EMAIL}
+                </a>
+                .
               </p>
             </div>
           </div>

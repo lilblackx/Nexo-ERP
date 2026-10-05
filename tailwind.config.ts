@@ -51,8 +51,8 @@ const config: Config = {
         },
         success: { DEFAULT: "#16A34A", bg: "#DCFCE7", text: "#15803D" },
         warning: { DEFAULT: "#D97706", bg: "#FEF3C7", text: "#B45309" },
-        danger: { DEFAULT: "#DC2626", bg: "#FEE2E2" },
-        info: { DEFAULT: "#0284C7", bg: "#EFF6FF" },
+        danger: { DEFAULT: "#DC2626", bg: "#FEE2E2", text: "#B91C1C" },
+        info: { DEFAULT: "#0284C7", bg: "#EFF6FF", text: "#0369A1" },
       },
       fontFamily: {
         display: ["var(--font-display)", "Segoe UI", "Arial", "sans-serif"],

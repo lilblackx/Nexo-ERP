@@ -89,7 +89,7 @@ export function Sidebar({ active, className }: { active: string; className?: str
       <nav className="flex-1 px-1.5 pb-2 pt-1.5">
         {MENU.map((g) => (
           <div key={g.group}>
-            <p className="px-1.5 pb-0.5 pt-2 text-[8px] font-semibold uppercase tracking-[0.12em] text-tint-300">
+            <p className="px-1.5 pb-0.5 pt-2 text-[8px] font-semibold uppercase tracking-[0.12em] text-tint-200">
               {g.group}
             </p>
             {g.items.map((it) => (
@@ -137,7 +137,7 @@ export function TopBar({ dense }: { dense?: boolean }) {
       </div>
       <div className="flex shrink-0 items-center gap-2 text-fg-muted">
         <span className={cn("hidden", !dense && "sm:inline")}>Actualizado hace 1 min</span>
-        <span className={cn("hidden h-6 w-36 items-center gap-1.5 rounded-sm border border-line px-2 text-fg-light", !dense && "md:flex")}>
+        <span className={cn("hidden h-6 w-36 items-center gap-1.5 rounded-sm border border-line px-2 text-fg-muted", !dense && "md:flex")}>
           Buscar en el sistema...
         </span>
         <Bell className="h-3.5 w-3.5" aria-hidden />

@@ -15,15 +15,15 @@ export default function Hero() {
   return (
     <section id="inicio" className="pt-10 sm:pt-14">
       <div className="container">
-        <div className="grid grid-cols-12 gap-x-6">
+        <div className="grid grid-cols-12 gap-x-2 md:gap-x-6">
           <div className="col-span-12 lg:col-span-11">
-            <h1 className="animate-rise text-display">Cobra en dólares y bolívares sin sacar la calculadora.</h1>
-            <p className="animate-rise mt-6 max-w-[60ch] text-lead text-fg-medium [animation-delay:80ms]">
+            <h1 className="text-display">Cobra en dólares y bolívares sin sacar la calculadora.</h1>
+            <p className="mt-6 max-w-[60ch] text-lead text-fg-medium">
               Nexo ERP es un sistema de gestión de escritorio para distribuidoras. Facturas con pago mixto, llevas el
               inventario por cajas, cobras y pagas cuentas, liquidas comisiones y tienes la tasa del día siempre a la
               vista. Todo sobre un servidor SQL en tu propia red.
             </p>
-            <div className="animate-rise mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 [animation-delay:160ms]">
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
               <Button asChild size="lg">
                 <a href={WA_DEMO} target="_blank" rel="noopener noreferrer">
                   Escríbenos por WhatsApp
@@ -31,7 +31,7 @@ export default function Hero() {
               </Button>
               <a
                 href="#dia"
-                className="group inline-flex items-center gap-2 text-[15px] font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
+                className="group inline-flex min-h-[44px] items-center gap-2 text-[15px] font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
               >
                 Mira un día completo
                 <ArrowDown className="h-4 w-4 transition-transform duration-300 ease-nexo group-hover:translate-y-0.5" />
@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
 
       {/* El AppFrame sangra contra el borde derecho del viewport */}
-      <div className="animate-rise mt-10 pl-4 [animation-delay:240ms] sm:pl-6 md:mt-16 lg:pl-[max(2rem,calc((100vw-1280px)/2+2rem))]">
+      <div className="mt-10 pl-4 sm:pl-6 md:mt-16 lg:pl-[max(2rem,calc((100vw-1280px)/2+2rem))]">
         <AppFrame screen="facturacion" cobro bleed />
       </div>
 

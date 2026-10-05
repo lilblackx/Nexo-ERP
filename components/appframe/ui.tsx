@@ -18,7 +18,7 @@ export function Title({
   return (
     <div className="min-w-0">
       <div className="flex flex-wrap items-center gap-2">
-        <h4 className="font-display text-[15px] font-semibold leading-tight text-fg">{children}</h4>
+        <p className="font-display text-[15px] font-semibold leading-tight text-fg">{children}</p>
         {chip}
       </div>
       {sub && <p className="mt-0.5 text-[10px] text-fg-muted">{sub}</p>}
@@ -74,7 +74,7 @@ export function SearchBox({ placeholder, className }: { placeholder: string; cla
   return (
     <span
       className={cn(
-        "flex h-6 min-w-0 items-center gap-1.5 rounded-sm border border-line bg-card px-2 text-[10px] text-fg-light",
+        "flex h-6 min-w-0 items-center gap-1.5 rounded-sm border border-line bg-card px-2 text-[10px] text-fg-muted",
         className,
       )}
     >
@@ -103,7 +103,7 @@ export function Select({ children, className }: { children: React.ReactNode; cla
   );
 }
 
-type Col = { label: string; align?: "right" | "center"; min?: "sm" | "md" | "lg"; mono?: boolean };
+type Col = { label: string; align?: "right" | "center"; min?: "sm" | "md" | "lg"; mono?: boolean; trunc?: boolean };
 const MIN_CLASS = { sm: "hidden sm:table-cell", md: "hidden md:table-cell", lg: "hidden lg:table-cell" } as const;
 
 /** Tabla con las columnas de la app. Con `dense`, las columnas con `min` se ocultan. */
@@ -123,6 +123,7 @@ export function Grid({
       c.min && (dense ? "hidden" : MIN_CLASS[c.min]),
       c.align === "right" && "text-right",
       c.align === "center" && "text-center",
+      c.trunc && "max-w-[4.5rem] truncate sm:max-w-[14rem]",
     );
   return (
     <div className={cn("overflow-hidden rounded-sm border border-line bg-card", className)}>
@@ -130,7 +131,7 @@ export function Grid({
         <thead>
           <tr className="bg-thead text-[9px] font-semibold uppercase tracking-wide text-fg-slate">
             {cols.map((c) => (
-              <th key={c.label} className={cn("whitespace-nowrap px-2 py-1.5", cell(c))}>
+              <th key={c.label} className={cn("whitespace-nowrap px-1.5 py-1.5 sm:px-2", cell(c))}>
                 {c.label}
               </th>
             ))}
@@ -142,7 +143,7 @@ export function Grid({
               {r.map((v, j) => (
                 <td
                   key={j}
-                  className={cn("whitespace-nowrap px-2 py-1.5", cell(cols[j]), cols[j].mono && "num")}
+                  className={cn("whitespace-nowrap px-1.5 py-1.5 sm:px-2", cell(cols[j]), cols[j].mono && "num")}
                 >
                   {v}
                 </td>

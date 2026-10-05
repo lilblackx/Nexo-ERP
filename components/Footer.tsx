@@ -1,10 +1,10 @@
 import Logo from "@/components/Logo";
-import { CONTACTS, NAV_LINKS, whatsappLink } from "@/lib/config";
+import { CONTACTS, CONTACT_EMAIL, NAV_LINKS, whatsappLink } from "@/lib/config";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-page">
-      <div className="container grid grid-cols-12 gap-x-6 gap-y-10 py-14">
+      <div className="container grid grid-cols-12 gap-x-2 md:gap-x-6 gap-y-10 py-14">
         <div className="col-span-12 md:col-span-5">
           <Logo />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-fg-medium">
@@ -41,6 +41,11 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-fg-medium transition-colors hover:text-primary">
+                {CONTACT_EMAIL}
+              </a>
+            </li>
             <li>
               <a href="/privacidad" className="text-fg-medium transition-colors hover:text-primary">
                 Aviso de privacidad

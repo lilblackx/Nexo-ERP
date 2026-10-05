@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import AppFrame, { type ScreenId } from "@/components/appframe/AppFrame";
+import { type ScreenId } from "@/components/appframe/AppFrame";
+import LazyFrame from "@/components/appframe/LazyFrame";
 import SectionHead from "@/components/SectionHead";
 import { features } from "@/lib/features";
 import { cn } from "@/lib/utils";
@@ -141,7 +142,7 @@ export default function Modules() {
           Estos son los módulos del sistema tal como aparecen en el menú de la aplicación.
         </SectionHead>
 
-        <div className="mt-12 grid grid-cols-12 gap-x-8 gap-y-6">
+        <div className="mt-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 gap-y-6">
           <div
             role="tablist"
             aria-label="Módulos del sistema"
@@ -165,7 +166,7 @@ export default function Modules() {
                       : "border-line bg-card text-fg-slate hover:text-primary lg:border-b-line lg:border-l-transparent lg:bg-transparent",
                   )}
                 >
-                  <span className={cn("num hidden w-5 text-xs lg:inline", on ? "text-primary" : "text-fg-light")}>
+                  <span className={cn("num hidden w-5 text-xs lg:inline", on ? "text-primary" : "text-fg-muted")}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {m.name}
@@ -194,7 +195,7 @@ export default function Modules() {
                 ))}
               </ul>
               <div className="mt-8">
-                <AppFrame screen={mod.screen} dense />
+                <LazyFrame screen={mod.screen} dense minH={500} />
                 <p className="mt-2 font-mono text-[12px] text-fg-muted">Pantalla de ejemplo con datos ficticios</p>
               </div>
             </div>

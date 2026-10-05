@@ -35,7 +35,7 @@ export default function Starting() {
           operación.
         </SectionHead>
 
-        <div className="mt-14 grid grid-cols-12 gap-x-8 gap-y-12">
+        <div className="mt-14 grid grid-cols-12 gap-x-2 lg:gap-x-8 gap-y-12">
           <div className="col-span-12 lg:col-span-7 lg:col-start-3">
             <h3 className="text-h3">Qué incluye hoy</h3>
             <dl className="mt-5 border-t-2 border-fg">

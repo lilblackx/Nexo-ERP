@@ -90,11 +90,11 @@ export const INVOICE_LIST = [
 ];
 
 export const STATUS_STYLE: Record<InvoiceStatus, string> = {
-  EMITIDA: "bg-info-bg text-info",
+  EMITIDA: "bg-info-bg text-info-text",
   PAGADA: "bg-success-bg text-success-text",
   PARCIAL: "bg-warning-bg text-warning-text",
-  VENCIDA: "bg-danger-bg text-danger",
-  ANULADA: "bg-thead text-fg-muted",
+  VENCIDA: "bg-danger-bg text-danger-text",
+  ANULADA: "bg-thead text-fg-slate",
 };
 
 /* ------------------------ Antigüedad de saldos ----------------------- */

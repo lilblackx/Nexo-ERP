@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, WA_DEMO } from "@/lib/config";
-import { RATES, bs, gap, pct } from "@/components/appframe/data";
+import { RATES, fmt, gap, pct } from "@/components/appframe/data";
 
 /**
  * Header de ancho completo: franja de tasas (motivo de la app) + navegación delgada.
@@ -26,16 +26,26 @@ export default function Header() {
       <div className="on-blue bg-primary-deep text-white">
         <div className="container flex h-7 items-center gap-4 whitespace-nowrap font-mono text-[11px]">
           <span className="text-tint-200">
-            <span className="hidden sm:inline">Tasa </span>BCV <b className="font-medium text-white">{bs(RATES.bcv)}</b>
+            <span className="hidden sm:inline">Tasa </span>BCV{" "}
+            <b className="font-medium text-white">
+              <span className="hidden sm:inline">Bs. </span>
+              {fmt(RATES.bcv)}
+            </b>
           </span>
           <span className="text-tint-200">
             <span className="hidden sm:inline">Dólar </span>paralelo{" "}
-            <b className="font-medium text-white">{bs(RATES.paralelo)}</b>
+            <b className="font-medium text-white">
+              <span className="hidden sm:inline">Bs. </span>
+              {fmt(RATES.paralelo)}
+            </b>
           </span>
           <span className="hidden text-tint-200 md:inline">
             Brecha <b className="font-medium text-white">{pct(gap(RATES.bcv, RATES.paralelo))}</b>
           </span>
-          <span className="ml-auto text-tint-300">valores de ejemplo</span>
+          <span className="ml-auto text-tint-300">
+            <span className="sm:hidden">ejemplo</span>
+            <span className="hidden sm:inline">valores de ejemplo</span>
+          </span>
         </div>
       </div>
 
