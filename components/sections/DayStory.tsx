@@ -66,7 +66,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "cajas", dialog: "abrir-caja" },
     focus: crop(340, 170, 600),
-    mobileFocus: { x: 400, y: 232, w: 480, h: 330 },
+    mobileFocus: { x: 392, y: 232, w: 496, h: 330 },
     caption: "Apertura de turno de una caja.",
   },
   {
@@ -98,7 +98,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "tasas", dialog: "tasa-brusco" },
     focus: crop(310, 130, 660),
-    mobileFocus: { x: 400, y: 270, w: 480, h: 360 },
+    mobileFocus: { x: 392, y: 270, w: 496, h: 360 },
     caption: "Aviso de cambio brusco al registrar la tasa.",
   },
   {
@@ -129,7 +129,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "compras", comprasTab: "recepciones", dialog: "devolucion" },
     focus: crop(340, 170, 600),
-    mobileFocus: { x: 400, y: 232, w: 480, h: 330 },
+    mobileFocus: { x: 392, y: 232, w: 496, h: 330 },
     caption: "Nota de devolución de una recepción, con motivo.",
   },
   {
@@ -173,7 +173,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "facturacion", dialog: "nueva-factura", tab: "pagos", draft: "hero" },
     focus: { x: 240, y: 190, w: 800, h: 549 },
-    mobileFocus: { x: 272, y: 200, w: 500, h: 470 },
+    mobileFocus: { x: 250, y: 200, w: 500, h: 490 },
     caption: "Factura FV-000013 en “Formas de Pago”: Zelle y transferencia en bolívares, con vuelto.",
   },
   {
@@ -188,7 +188,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "facturacion", dialog: "autorizacion" },
     focus: crop(310, 150, 660),
-    mobileFocus: { x: 400, y: 190, w: 480, h: 420 },
+    mobileFocus: { x: 392, y: 190, w: 496, h: 420 },
     caption: "Autorización de un supervisor para un descuento.",
   },
   {
@@ -221,7 +221,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "cxc", dialog: "abono" },
     focus: crop(300, 140, 700),
-    mobileFocus: { x: 390, y: 190, w: 500, h: 380 },
+    mobileFocus: { x: 380, y: 190, w: 520, h: 380 },
     caption: "Abono general: se aplica a las facturas más antiguas primero.",
   },
   {

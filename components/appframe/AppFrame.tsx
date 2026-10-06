@@ -230,6 +230,8 @@ export default function AppFrame({
 
   const crop = width && width < SMALL_VIEWPORT && mobileFocus ? mobileFocus : (focus ?? FULL);
   const scale = width ? width / crop.w : 0;
+  // Si el recorte deja fuera el lado derecho de la ventana, se desvanece el borde: se nota que continúa.
+  const cutRight = crop.x + crop.w < 1270;
 
   return (
     <figure className={cn("m-0", className)}>
@@ -238,11 +240,14 @@ export default function AppFrame({
         aria-hidden
         inert
         className={cn("relative overflow-hidden", frameClassName)}
-        style={
-          scale
+        style={{
+          ...(scale
             ? { height: crop.h * scale }
-            : { aspectRatio: `${(focus ?? FULL).w} / ${(focus ?? FULL).h}` }
-        }
+            : { aspectRatio: `${(focus ?? FULL).w} / ${(focus ?? FULL).h}` }),
+          ...(cutRight && crop === mobileFocus
+            ? { maskImage: "linear-gradient(to right, #000 calc(100% - 28px), transparent)" }
+            : null),
+        }}
       >
         <div
           style={{
