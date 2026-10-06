@@ -177,6 +177,11 @@
   flex-direction: column;
   position: relative;
 }
+.app-frame .af-banner,
+.app-frame .af-banner span {
+  text-wrap: wrap;
+  white-space: normal;
+}
 .app-frame .af-banner {
   flex: none;
   background: #fef3c7;
@@ -807,4 +812,54 @@
 .app-frame .af-pulse {
   outline: 2px solid var(--af-primary);
   outline-offset: 2px;
+}
+
+/* ---------- Controles reales (juego de cobro mixto): mismo aspecto, pero accesibles ---------- */
+.app-frame .af-ctl {
+  height: 36px;
+  width: 100%;
+  min-width: 0;
+  padding: 0 10px;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-field);
+  background: #fff;
+  color: var(--af-text);
+  font: inherit;
+  font-size: 13px;
+}
+.app-frame input.af-ctl.is-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.app-frame .af-ctl:focus-visible,
+.app-frame button:focus-visible {
+  outline: 2px solid var(--af-primary-light);
+  outline-offset: 1px;
+}
+.app-frame button.af-btn {
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.app-frame button.af-btn:disabled {
+  background: var(--af-text-light);
+  border-color: var(--af-text-light);
+  color: #fff;
+  cursor: not-allowed;
+}
+.app-frame .af-live-head,
+.app-frame .af-live-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+.app-frame .af-live-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.app-frame .af-live-row > .af-live-ref {
+  font-size: 12px;
+  color: var(--af-text-muted);
+  text-wrap: wrap;
 }

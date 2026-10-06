@@ -146,9 +146,9 @@ function InvoiceTab({ v }: { v: DraftView }) {
   const t = totalsOf(v);
   return (
     <>
-      <div className="af-card" style={{ padding: "14px 16px", marginBottom: 12 }}>
-        <div className="af-section-label">Datos de la factura</div>
-        <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: 14 }}>
+      <div className="af-card" style={{ padding: "12px 16px 0", marginBottom: 10 }}>
+        <div className="af-section-label" style={{ marginBottom: 8 }}>Datos de la factura</div>
+        <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", columnGap: 14 }}>
           <Field label="Cliente" required>
             <Input value={v.client} focus />
           </Field>
@@ -158,17 +158,15 @@ function InvoiceTab({ v }: { v: DraftView }) {
           <Field label="Condición de Pago" required>
             <SelectField value={v.condition === "contado" ? "Contado" : "Crédito"} />
           </Field>
-          {v.condition === "credito" && v.due ? (
+          {v.condition === "credito" && v.due && (
             <Field label="Fecha de Vencimiento">
               <Input value={dateEs(v.due)} />
             </Field>
-          ) : (
-            <span />
           )}
         </div>
       </div>
-      <div className="af-card" style={{ padding: "14px 16px" }}>
-        <div className="af-section-label">Productos</div>
+      <div className="af-card" style={{ padding: "12px 16px" }}>
+        <div className="af-section-label" style={{ marginBottom: 8 }}>Productos</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr 110px 120px", gap: 10, marginBottom: 10 }}>
           <Input placeholder="Buscar producto…" />
           <SelectField value={v.lines.at(-1)?.product ?? "Producto"} />
@@ -178,7 +176,7 @@ function InvoiceTab({ v }: { v: DraftView }) {
           </Btn>
         </div>
         <Table
-          height={Math.min(46 * 5, 40 + 45 * Math.max(v.lines.length, 3))}
+          height={40 + 45 * Math.min(Math.max(v.lines.length, 3), 4)}
           columns={[
             { label: "Producto", w: "2.2fr" },
             { label: "Cantidad", w: "1fr" },

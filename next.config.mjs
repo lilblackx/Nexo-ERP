@@ -15,8 +15,9 @@ const nextConfig = {
   // Hay otro package-lock.json en una carpeta superior; fijamos la raíz de este proyecto.
   outputFileTracingRoot: root,
   poweredByHeader: false,
-  ...(staticExport
-    ? { output: "export", images: { unoptimized: true } }
-    : { images: { formats: ["image/avif", "image/webp"] } }),
+  // Las capturas usan un loader propio con variantes WebP pre-generadas (scripts/optimizar-capturas.mjs):
+  // funciona igual con exportación estática (no hay optimizador de imágenes en Cloudflare Pages).
+  images: { loader: "custom", loaderFile: "./lib/image-loader.ts" },
+  ...(staticExport ? { output: "export" } : {}),
 };
 export default nextConfig;

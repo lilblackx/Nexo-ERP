@@ -12,3 +12,4 @@ next-env.d.ts
 .next-dev
 out
 *.zip
+.next-build

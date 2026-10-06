@@ -37,7 +37,7 @@ function smooth(pts: [number, number][]) {
 function WeekChart() {
   const week = demo.dashboard.week;
   const W = 700;
-  const H = 130;
+  const H = 112;
   const max = Math.max(...week.map((w) => w.amount)) * 1.05;
   const pts = week.map((w, i) => [10 + (i * (W - 20)) / (week.length - 1), H - 8 - (w.amount / max) * (H - 24)] as [number, number]);
   const line = smooth(pts);
