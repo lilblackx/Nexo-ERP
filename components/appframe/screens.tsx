@@ -129,7 +129,7 @@ function CobroDialog({ dense }: P) {
               <span className="text-fg-slate">Efectivo USD</span>
               <span className="num text-fg">{usd(p.cashUsd)}</span>
             </div>
-            {features.pagoMovil && (
+            {features.pagoMovilComoCobro && (
               <div className="flex items-center justify-between px-2 py-1.5">
                 <span className="text-fg-slate">Pago móvil (Bs.)</span>
                 <span className="text-right">

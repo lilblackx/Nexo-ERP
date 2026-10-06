@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 /*
  * Momento 3: el total es fijo en USD y el visitante lo reparte.
- * Sin USDT (solo existiría con `features.usdt`) y COP no es método de cobro hasta que se confirme.
+ * Sin USDT (solo existiría con `features.binancePay`) y COP no es método de cobro hasta que se confirme.
  * TODO(luis): confirmar el flujo real del pago móvil (referencia, verificación, tasa aplicada).
  */
 
@@ -132,7 +132,7 @@ export default function MixedPayment() {
               <span className="flex items-center gap-1.5">
                 <i className="h-2 w-2 bg-primary" /> Efectivo USD
               </span>
-              {features.pagoMovil && (
+              {features.pagoMovilComoCobro && (
                 <span className="flex items-center gap-1.5">
                   <i className="h-2 w-2 bg-primary-light/45" /> Pago móvil
                 </span>
@@ -164,7 +164,7 @@ export default function MixedPayment() {
           <div className="col-span-12 lg:col-span-7">
             <div className="border-t-2 border-fg">
               <Field id="cash" label="Efectivo USD" prefix="$" value={cash} onChange={setCash} />
-              {features.pagoMovil && (
+              {features.pagoMovilComoCobro && (
                 <Field
                   id="pm"
                   label="Pago móvil (Bs.)"

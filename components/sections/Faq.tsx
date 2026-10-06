@@ -35,13 +35,13 @@ const FAQ = [
   },
   {
     q: "¿Cómo se registra un pago móvil?",
-    a: features.pagoMovil
+    a: features.pagoMovilComoCobro
       ? "En la factura, el pago móvil se registra como un método de pago, junto con el efectivo en dólares. Puedes combinar los dos en una misma factura." // TODO(luis): confirmar el flujo (verificación, referencia, registro manual)
       : "",
   },
   {
     q: "¿Cómo funciona la licencia?",
-    a: features.ed25519
+    a: features.licenciaFirmada
       ? "La licencia se verifica con firma criptográfica Ed25519 y se administra desde Configuración." // TODO(luis): confirmar antes de activar
       : "La licencia se administra desde Configuración, en la pestaña Licencia. Si quieres conocer las condiciones, pregúntanos.", // TODO(luis): modelo de licencia, precio y renovación
   },

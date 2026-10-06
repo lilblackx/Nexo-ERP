@@ -1,0 +1,2282 @@
+{
+  "_generado": "scripts/generar-demo.mjs — datos ficticios; tasas de ejemplo; no editar a mano",
+  "company": {
+    "name": "Distribuidora Demo, C.A.",
+    "initials": "DD",
+    "app": "Nexo ERP"
+  },
+  "today": "2026-10-06",
+  "ivaPct": 16,
+  "rates": {
+    "bcv": 871.36,
+    "paralelo": 970,
+    "cop": 3300,
+    "gapPct": 11.3,
+    "bcvVsAyerPct": 0.2,
+    "paraleloVsAyerPct": 0.1,
+    "vigenteDesde": "2026-10-06 08:30",
+    "actualizado": "Actualizado hace 12 min"
+  },
+  "rateHistory": [
+    {
+      "fecha": "2026-09-07 08:30",
+      "bcv": 808.19,
+      "paralelo": 887.39,
+      "cop": 3060.76,
+      "brecha": 9.8
+    },
+    {
+      "fecha": "2026-09-08 08:30",
+      "bcv": 810.36,
+      "paralelo": 887.69,
+      "cop": 3068.98,
+      "brecha": 9.5
+    },
+    {
+      "fecha": "2026-09-09 08:30",
+      "bcv": 812.54,
+      "paralelo": 891.63,
+      "cop": 3077.24,
+      "brecha": 9.7
+    },
+    {
+      "fecha": "2026-09-10 08:30",
+      "bcv": 814.72,
+      "paralelo": 895.59,
+      "cop": 3085.49,
+      "brecha": 9.9
+    },
+    {
+      "fecha": "2026-09-11 08:30",
+      "bcv": 816.9,
+      "paralelo": 895.88,
+      "cop": 3093.75,
+      "brecha": 9.7
+    },
+    {
+      "fecha": "2026-09-12 08:30",
+      "bcv": 819.08,
+      "paralelo": 899.85,
+      "cop": 3102.01,
+      "brecha": 9.9
+    },
+    {
+      "fecha": "2026-09-13 08:30",
+      "bcv": 821.26,
+      "paralelo": 903.82,
+      "cop": 3110.26,
+      "brecha": 10.1
+    },
+    {
+      "fecha": "2026-09-14 08:30",
+      "bcv": 823.44,
+      "paralelo": 904.09,
+      "cop": 3118.52,
+      "brecha": 9.8
+    },
+    {
+      "fecha": "2026-09-15 08:30",
+      "bcv": 825.61,
+      "paralelo": 908.06,
+      "cop": 3126.74,
+      "brecha": 10
+    },
+    {
+      "fecha": "2026-09-16 08:30",
+      "bcv": 827.79,
+      "paralelo": 912.05,
+      "cop": 3134.99,
+      "brecha": 10.2
+    },
+    {
+      "fecha": "2026-09-17 08:30",
+      "bcv": 829.97,
+      "paralelo": 912.31,
+      "cop": 3143.25,
+      "brecha": 9.9
+    },
+    {
+      "fecha": "2026-09-18 08:30",
+      "bcv": 832.15,
+      "paralelo": 916.31,
+      "cop": 3151.5,
+      "brecha": 10.1
+    },
+    {
+      "fecha": "2026-09-19 08:30",
+      "bcv": 834.33,
+      "paralelo": 920.31,
+      "cop": 3159.76,
+      "brecha": 10.3
+    },
+    {
+      "fecha": "2026-09-20 08:30",
+      "bcv": 836.51,
+      "paralelo": 920.56,
+      "cop": 3168.02,
+      "brecha": 10
+    },
+    {
+      "fecha": "2026-09-21 08:30",
+      "bcv": 838.68,
+      "paralelo": 924.56,
+      "cop": 3176.23,
+      "brecha": 10.2
+    },
+    {
+      "fecha": "2026-09-22 08:30",
+      "bcv": 840.86,
+      "paralelo": 928.57,
+      "cop": 3184.49,
+      "brecha": 10.4
+    },
+    {
+      "fecha": "2026-09-23 08:30",
+      "bcv": 843.04,
+      "paralelo": 928.81,
+      "cop": 3192.75,
+      "brecha": 10.2
+    },
+    {
+      "fecha": "2026-09-24 08:30",
+      "bcv": 845.22,
+      "paralelo": 932.83,
+      "cop": 3201,
+      "brecha": 10.4
+    },
+    {
+      "fecha": "2026-09-25 08:30",
+      "bcv": 847.4,
+      "paralelo": 936.87,
+      "cop": 3209.26,
+      "brecha": 10.6
+    },
+    {
+      "fecha": "2026-09-26 08:30",
+      "bcv": 849.58,
+      "paralelo": 938.62,
+      "cop": 3217.52,
+      "brecha": 10.5
+    },
+    {
+      "fecha": "2026-09-27 08:30",
+      "bcv": 851.75,
+      "paralelo": 946.49,
+      "cop": 3225.73,
+      "brecha": 11.1
+    },
+    {
+      "fecha": "2026-09-28 08:30",
+      "bcv": 853.93,
+      "paralelo": 945.42,
+      "cop": 3233.99,
+      "brecha": 10.7
+    },
+    {
+      "fecha": "2026-09-29 08:30",
+      "bcv": 856.11,
+      "paralelo": 951.34,
+      "cop": 3242.25,
+      "brecha": 11.1
+    },
+    {
+      "fecha": "2026-09-30 08:30",
+      "bcv": 858.29,
+      "paralelo": 949.25,
+      "cop": 3250.5,
+      "brecha": 10.6
+    },
+    {
+      "fecha": "2026-10-01 08:30",
+      "bcv": 860.47,
+      "paralelo": 956.18,
+      "cop": 3258.76,
+      "brecha": 11.1
+    },
+    {
+      "fecha": "2026-10-02 08:30",
+      "bcv": 862.65,
+      "paralelo": 956.09,
+      "cop": 3267.01,
+      "brecha": 10.8
+    },
+    {
+      "fecha": "2026-10-03 08:30",
+      "bcv": 864.82,
+      "paralelo": 964.05,
+      "cop": 3275.23,
+      "brecha": 11.5
+    },
+    {
+      "fecha": "2026-10-04 08:30",
+      "bcv": 867,
+      "paralelo": 962.94,
+      "cop": 3283.49,
+      "brecha": 11.1
+    },
+    {
+      "fecha": "2026-10-05 08:30",
+      "bcv": 869.18,
+      "paralelo": 968.92,
+      "cop": 3291.74,
+      "brecha": 11.5
+    },
+    {
+      "fecha": "2026-10-06 08:30",
+      "bcv": 871.36,
+      "paralelo": 970,
+      "cop": 3300,
+      "brecha": 11.3
+    }
+  ],
+  "users": [
+    {
+      "username": "admin.demo",
+      "name": "Administrador Demo",
+      "role": "ADMIN",
+      "status": "ACTIVO"
+    },
+    {
+      "username": "cajero.demo",
+      "name": "Cajero Demo",
+      "role": "CAJERO",
+      "status": "ACTIVO"
+    },
+    {
+      "username": "vendedor.demo",
+      "name": "Vendedor Demo",
+      "role": "VENDEDOR",
+      "status": "ACTIVO"
+    }
+  ],
+  "sellers": [
+    {
+      "code": "VEN-001",
+      "name": "Carlos"
+    },
+    {
+      "code": "VEN-002",
+      "name": "María"
+    },
+    {
+      "code": "VEN-003",
+      "name": "José"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Abasto La Esquina",
+      "category": "Minorista",
+      "creditLimit": 0,
+      "creditDays": 0
+    },
+    {
+      "id": 2,
+      "name": "Mercadito Central",
+      "category": "Minorista",
+      "creditLimit": 0,
+      "creditDays": 0
+    },
+    {
+      "id": 3,
+      "name": "Supermercado Norte, C.A.",
+      "category": "Mayorista",
+      "creditLimit": 3000,
+      "creditDays": 30
+    },
+    {
+      "id": 4,
+      "name": "Distribuciones del Sur, C.A.",
+      "category": "Distribuidor",
+      "creditLimit": 5000,
+      "creditDays": 45
+    },
+    {
+      "id": 5,
+      "name": "Bodega Los Pinos",
+      "category": "Mayorista",
+      "creditLimit": 1500,
+      "creditDays": 30
+    },
+    {
+      "id": 6,
+      "name": "Comercial Occidente, C.A.",
+      "category": "Mayorista",
+      "creditLimit": 2500,
+      "creditDays": 30
+    },
+    {
+      "id": 7,
+      "name": "Licorería El Puente",
+      "category": "Minorista",
+      "creditLimit": 0,
+      "creditDays": 0
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "Alimentos Mayoristas, C.A.",
+      "creditDays": 30
+    },
+    {
+      "name": "Bebidas y Refrescos, C.A.",
+      "creditDays": 15
+    },
+    {
+      "name": "Insumos de Limpieza, C.A.",
+      "creditDays": 0
+    }
+  ],
+  "products": [
+    {
+      "code": "BEB-001",
+      "name": "Refresco Cola 2L (caja x6)",
+      "category": "Bebidas",
+      "perBox": 6,
+      "units": 480,
+      "boxes": 80,
+      "loose": 0,
+      "min": 120,
+      "cost": 7.2,
+      "p1": 9,
+      "p2": 9.6,
+      "p3": 10.2,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "BEB-002",
+      "name": "Agua Mineral 600ml (caja x24)",
+      "category": "Bebidas",
+      "perBox": 24,
+      "units": 1250,
+      "boxes": 52,
+      "loose": 2,
+      "min": 240,
+      "cost": 5.4,
+      "p1": 7.2,
+      "p2": 7.8,
+      "p3": 8.4,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "BEB-003",
+      "name": "Jugo de Naranja 1L (caja x12)",
+      "category": "Bebidas",
+      "perBox": 12,
+      "units": 95,
+      "boxes": 7,
+      "loose": 11,
+      "min": 120,
+      "cost": 10.8,
+      "p1": 13.5,
+      "p2": 14.4,
+      "p3": 15.3,
+      "expires": "2026-10-25",
+      "status": "ACTIVO",
+      "lowStock": true
+    },
+    {
+      "code": "ALI-001",
+      "name": "Arroz 1kg (caja x20)",
+      "category": "Alimentos",
+      "perBox": 20,
+      "units": 900,
+      "boxes": 45,
+      "loose": 0,
+      "min": 200,
+      "cost": 17,
+      "p1": 21,
+      "p2": 22.5,
+      "p3": 24,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "ALI-002",
+      "name": "Harina de Maíz 1kg (caja x20)",
+      "category": "Alimentos",
+      "perBox": 20,
+      "units": 610,
+      "boxes": 30,
+      "loose": 10,
+      "min": 200,
+      "cost": 15.5,
+      "p1": 19,
+      "p2": 20.4,
+      "p3": 21.8,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "ALI-003",
+      "name": "Aceite Vegetal 1L (caja x12)",
+      "category": "Alimentos",
+      "perBox": 12,
+      "units": 156,
+      "boxes": 13,
+      "loose": 0,
+      "min": 60,
+      "cost": 28,
+      "p1": 34,
+      "p2": 36,
+      "p3": 38,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "LIM-001",
+      "name": "Detergente en Polvo 1kg (caja x12)",
+      "category": "Limpieza",
+      "perBox": 12,
+      "units": 320,
+      "boxes": 26,
+      "loose": 8,
+      "min": 96,
+      "cost": 19.8,
+      "p1": 24,
+      "p2": 25.6,
+      "p3": 27.2,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "LIM-002",
+      "name": "Jabón de Barra (caja x30)",
+      "category": "Limpieza",
+      "perBox": 30,
+      "units": 1200,
+      "boxes": 40,
+      "loose": 0,
+      "min": 300,
+      "cost": 12,
+      "p1": 15,
+      "p2": 16.2,
+      "p3": 17.4,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    },
+    {
+      "code": "SNK-001",
+      "name": "Galletas de Soda (caja x24)",
+      "category": "Snacks",
+      "perBox": 24,
+      "units": 70,
+      "boxes": 2,
+      "loose": 22,
+      "min": 96,
+      "cost": 9.6,
+      "p1": 12,
+      "p2": 12.9,
+      "p3": 13.8,
+      "expires": "2026-10-20",
+      "status": "ACTIVO",
+      "lowStock": true
+    },
+    {
+      "code": "SNK-002",
+      "name": "Papas Fritas 100g (caja x36)",
+      "category": "Snacks",
+      "perBox": 36,
+      "units": 540,
+      "boxes": 15,
+      "loose": 0,
+      "min": 144,
+      "cost": 21.6,
+      "p1": 27,
+      "p2": 28.8,
+      "p3": 30.6,
+      "expires": null,
+      "status": "ACTIVO",
+      "lowStock": false
+    }
+  ],
+  "invoices": [
+    {
+      "number": "FV-000001",
+      "control": "00-00000001",
+      "issued": "2026-05-06 10:30",
+      "client": "Distribuciones del Sur, C.A.",
+      "clientId": 4,
+      "seller": "José",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 432,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 69.12,
+      "total": 501.12,
+      "rate": 538.06,
+      "creditDays": 45,
+      "due": "2026-06-20",
+      "status": "VENCIDA",
+      "lines": [
+        {
+          "code": "ALI-001",
+          "product": "Arroz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 1",
+          "price": 21,
+          "subtotal": 210
+        },
+        {
+          "code": "LIM-002",
+          "product": "Jabón de Barra (caja x30)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 2",
+          "price": 16.2,
+          "subtotal": 162
+        },
+        {
+          "code": "SNK-001",
+          "product": "Galletas de Soda (caja x24)",
+          "saleType": "bulto",
+          "qty": 5,
+          "level": "Precio 1",
+          "price": 12,
+          "subtotal": 60
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000002",
+      "control": "00-00000002",
+      "issued": "2026-06-28 11:15",
+      "client": "Bodega Los Pinos",
+      "clientId": 5,
+      "seller": "María",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 210,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 33.6,
+      "total": 243.6,
+      "rate": 653.52,
+      "creditDays": 30,
+      "due": "2026-07-28",
+      "status": "VENCIDA",
+      "lines": [
+        {
+          "code": "BEB-002",
+          "product": "Agua Mineral 600ml (caja x24)",
+          "saleType": "bulto",
+          "qty": 15,
+          "level": "Precio 1",
+          "price": 7.2,
+          "subtotal": 108
+        },
+        {
+          "code": "ALI-003",
+          "product": "Aceite Vegetal 1L (caja x12)",
+          "saleType": "bulto",
+          "qty": 3,
+          "level": "Precio 1",
+          "price": 34,
+          "subtotal": 102
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000003",
+      "control": "00-00000003",
+      "issued": "2026-07-26 09:40",
+      "client": "Comercial Occidente, C.A.",
+      "clientId": 6,
+      "seller": "José",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 286,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 45.76,
+      "total": 331.76,
+      "rate": 714.52,
+      "creditDays": 30,
+      "due": "2026-08-25",
+      "status": "VENCIDA",
+      "lines": [
+        {
+          "code": "ALI-002",
+          "product": "Harina de Maíz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 1",
+          "price": 19,
+          "subtotal": 190
+        },
+        {
+          "code": "BEB-001",
+          "product": "Refresco Cola 2L (caja x6)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 2",
+          "price": 9.6,
+          "subtotal": 96
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [
+        {
+          "date": "2026-08-10",
+          "method": "transferencia",
+          "currency": "VES",
+          "amount": 67247.1,
+          "usd": 90,
+          "rate": 747.19,
+          "origin": "Banco Demo Dos",
+          "reference": "TRF-DEMO-0003"
+        }
+      ],
+      "voided": null
+    },
+    {
+      "number": "FV-000004",
+      "control": "00-00000004",
+      "issued": "2026-08-21 16:05",
+      "client": "Supermercado Norte, C.A.",
+      "clientId": 3,
+      "seller": "María",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 314.4,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 50.3,
+      "total": 364.7,
+      "rate": 771.15,
+      "creditDays": 30,
+      "due": "2026-09-20",
+      "status": "VENCIDA",
+      "lines": [
+        {
+          "code": "LIM-001",
+          "product": "Detergente en Polvo 1kg (caja x12)",
+          "saleType": "bulto",
+          "qty": 8,
+          "level": "Precio 1",
+          "price": 24,
+          "subtotal": 192
+        },
+        {
+          "code": "SNK-002",
+          "product": "Papas Fritas 100g (caja x36)",
+          "saleType": "bulto",
+          "qty": 4,
+          "level": "Precio 3",
+          "price": 30.6,
+          "subtotal": 122.4
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000005",
+      "control": "00-00000005",
+      "issued": "2026-09-15 10:10",
+      "client": "Supermercado Norte, C.A.",
+      "clientId": 3,
+      "seller": "María",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 292.5,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 46.8,
+      "total": 339.3,
+      "rate": 825.61,
+      "creditDays": 30,
+      "due": "2026-10-15",
+      "status": "PAGADA",
+      "lines": [
+        {
+          "code": "BEB-001",
+          "product": "Refresco Cola 2L (caja x6)",
+          "saleType": "bulto",
+          "qty": 20,
+          "level": "Precio 1",
+          "price": 9,
+          "subtotal": 180
+        },
+        {
+          "code": "ALI-001",
+          "product": "Arroz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 5,
+          "level": "Precio 2",
+          "price": 22.5,
+          "subtotal": 112.5
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [
+        {
+          "date": "2026-09-30",
+          "method": "zelle",
+          "currency": "USD",
+          "amount": 339.3,
+          "usd": 339.3,
+          "rate": null,
+          "origin": "Banco Demo Uno",
+          "reference": "ZELLE-DEMO-0004"
+        }
+      ],
+      "voided": null
+    },
+    {
+      "number": "FV-000006",
+      "control": "00-00000006",
+      "issued": "2026-10-01 14:20",
+      "client": "Comercial Occidente, C.A.",
+      "clientId": 6,
+      "seller": "José",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 651,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 104.16,
+      "total": 755.16,
+      "rate": 860.47,
+      "creditDays": 30,
+      "due": "2026-10-31",
+      "status": "PARCIAL",
+      "lines": [
+        {
+          "code": "BEB-002",
+          "product": "Agua Mineral 600ml (caja x24)",
+          "saleType": "bulto",
+          "qty": 30,
+          "level": "Precio 1",
+          "price": 7.2,
+          "subtotal": 216
+        },
+        {
+          "code": "ALI-002",
+          "product": "Harina de Maíz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 15,
+          "level": "Precio 1",
+          "price": 19,
+          "subtotal": 285
+        },
+        {
+          "code": "LIM-002",
+          "product": "Jabón de Barra (caja x30)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 1",
+          "price": 15,
+          "subtotal": 150
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [
+        {
+          "date": "2026-10-04",
+          "method": "zelle",
+          "currency": "USD",
+          "amount": 200,
+          "usd": 200,
+          "rate": null,
+          "origin": "Banco Demo Uno",
+          "reference": "ZELLE-DEMO-0003"
+        }
+      ],
+      "voided": null
+    },
+    {
+      "number": "FV-000007",
+      "control": "00-00000007",
+      "issued": "2026-10-03 12:00",
+      "client": "Abasto La Esquina",
+      "clientId": 1,
+      "seller": "Carlos",
+      "condition": "contado",
+      "paymentColumn": "efectivo",
+      "subtotal": 57,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 9.12,
+      "total": 66.12,
+      "rate": 864.82,
+      "creditDays": null,
+      "due": null,
+      "status": "ANULADA",
+      "lines": [
+        {
+          "code": "SNK-002",
+          "product": "Papas Fritas 100g (caja x36)",
+          "saleType": "bulto",
+          "qty": 1,
+          "level": "Precio 1",
+          "price": 27,
+          "subtotal": 27
+        },
+        {
+          "code": "LIM-002",
+          "product": "Jabón de Barra (caja x30)",
+          "saleType": "bulto",
+          "qty": 2,
+          "level": "Precio 1",
+          "price": 15,
+          "subtotal": 30
+        }
+      ],
+      "payments": [
+        {
+          "method": "efectivo",
+          "currency": "USD",
+          "amount": 70,
+          "usd": 70,
+          "origin": "Caja 2",
+          "reference": null
+        }
+      ],
+      "paidUsd": 70,
+      "change": {
+        "usd": 3.88,
+        "method": "efectivo",
+        "origin": "Caja 2",
+        "reference": null,
+        "authorizedBy": null
+      },
+      "laterPayments": [],
+      "voided": {
+        "date": "2026-10-03 12:30",
+        "reason": "Error al digitar el pedido",
+        "user": "admin.demo",
+        "creditNote": "NC-000001"
+      }
+    },
+    {
+      "number": "FV-000008",
+      "control": "00-00000008",
+      "issued": "2026-10-05 15:30",
+      "client": "Bodega Los Pinos",
+      "clientId": 5,
+      "seller": "María",
+      "condition": "contado",
+      "paymentColumn": "mixto",
+      "subtotal": 1035,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 165.6,
+      "total": 1200.6,
+      "rate": 869.18,
+      "creditDays": null,
+      "due": null,
+      "status": "PAGADA",
+      "lines": [
+        {
+          "code": "ALI-001",
+          "product": "Arroz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 20,
+          "level": "Precio 1",
+          "price": 21,
+          "subtotal": 420
+        },
+        {
+          "code": "BEB-002",
+          "product": "Agua Mineral 600ml (caja x24)",
+          "saleType": "bulto",
+          "qty": 25,
+          "level": "Precio 2",
+          "price": 7.8,
+          "subtotal": 195
+        },
+        {
+          "code": "LIM-002",
+          "product": "Jabón de Barra (caja x30)",
+          "saleType": "bulto",
+          "qty": 20,
+          "level": "Precio 1",
+          "price": 15,
+          "subtotal": 300
+        },
+        {
+          "code": "SNK-001",
+          "product": "Galletas de Soda (caja x24)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 1",
+          "price": 12,
+          "subtotal": 120
+        }
+      ],
+      "payments": [
+        {
+          "method": "zelle",
+          "currency": "USD",
+          "amount": 700,
+          "usd": 700,
+          "origin": "Banco Demo Uno",
+          "reference": "ZELLE-DEMO-0002"
+        },
+        {
+          "method": "transferencia",
+          "currency": "VES",
+          "amount": 435111.51,
+          "usd": 500.6,
+          "origin": "Banco Demo Dos",
+          "reference": "TRF-DEMO-0002"
+        }
+      ],
+      "paidUsd": 1200.6,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000009",
+      "control": "00-00000009",
+      "issued": "2026-10-06 09:12",
+      "client": "Abasto La Esquina",
+      "clientId": 1,
+      "seller": "Carlos",
+      "condition": "contado",
+      "paymentColumn": "efectivo",
+      "subtotal": 89.1,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 14.26,
+      "total": 103.36,
+      "rate": 871.36,
+      "creditDays": null,
+      "due": null,
+      "status": "PAGADA",
+      "lines": [
+        {
+          "code": "BEB-001",
+          "product": "Refresco Cola 2L (caja x6)",
+          "saleType": "bulto",
+          "qty": 2,
+          "level": "Precio 1",
+          "price": 9,
+          "subtotal": 18
+        },
+        {
+          "code": "ALI-001",
+          "product": "Arroz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 1,
+          "level": "Precio 2",
+          "price": 22.5,
+          "subtotal": 22.5
+        },
+        {
+          "code": "LIM-002",
+          "product": "Jabón de Barra (caja x30)",
+          "saleType": "bulto",
+          "qty": 3,
+          "level": "Precio 2",
+          "price": 16.2,
+          "subtotal": 48.6
+        }
+      ],
+      "payments": [
+        {
+          "method": "efectivo",
+          "currency": "USD",
+          "amount": 100,
+          "usd": 100,
+          "origin": "Caja Principal",
+          "reference": null
+        },
+        {
+          "method": "efectivo",
+          "currency": "VES",
+          "amount": 4356.8,
+          "usd": 5,
+          "origin": "Caja Principal",
+          "reference": null
+        }
+      ],
+      "paidUsd": 105,
+      "change": {
+        "usd": 1.64,
+        "method": "efectivo",
+        "origin": "Caja Principal",
+        "reference": null,
+        "authorizedBy": null
+      },
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000010",
+      "control": "00-00000010",
+      "issued": "2026-10-06 10:05",
+      "client": "Supermercado Norte, C.A.",
+      "clientId": 3,
+      "seller": "María",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 368,
+      "discount": 8,
+      "discountReason": "Cliente frecuente",
+      "discountAuthorizedBy": "admin.demo",
+      "ivaPct": 16,
+      "iva": 57.6,
+      "total": 417.6,
+      "rate": 871.36,
+      "creditDays": 30,
+      "due": "2026-11-05",
+      "status": "EMITIDA",
+      "lines": [
+        {
+          "code": "BEB-002",
+          "product": "Agua Mineral 600ml (caja x24)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 1",
+          "price": 7.2,
+          "subtotal": 72
+        },
+        {
+          "code": "ALI-002",
+          "product": "Harina de Maíz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 8,
+          "level": "Precio 1",
+          "price": 19,
+          "subtotal": 152
+        },
+        {
+          "code": "ALI-003",
+          "product": "Aceite Vegetal 1L (caja x12)",
+          "saleType": "bulto",
+          "qty": 4,
+          "level": "Precio 2",
+          "price": 36,
+          "subtotal": 144
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000011",
+      "control": "00-00000011",
+      "issued": "2026-10-06 11:40",
+      "client": "Mercadito Central",
+      "clientId": 2,
+      "seller": "Carlos",
+      "condition": "contado",
+      "paymentColumn": "mixto",
+      "subtotal": 72,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 11.52,
+      "total": 83.52,
+      "rate": 871.36,
+      "creditDays": null,
+      "due": null,
+      "status": "PAGADA",
+      "lines": [
+        {
+          "code": "BEB-001",
+          "product": "Refresco Cola 2L (caja x6)",
+          "saleType": "unidad",
+          "qty": 12,
+          "level": "Precio 1",
+          "price": 1.5,
+          "subtotal": 18
+        },
+        {
+          "code": "SNK-002",
+          "product": "Papas Fritas 100g (caja x36)",
+          "saleType": "bulto",
+          "qty": 2,
+          "level": "Precio 1",
+          "price": 27,
+          "subtotal": 54
+        }
+      ],
+      "payments": [
+        {
+          "method": "zelle",
+          "currency": "USD",
+          "amount": 50,
+          "usd": 50,
+          "origin": "Banco Demo Uno",
+          "reference": "ZELLE-DEMO-0001"
+        },
+        {
+          "method": "transferencia",
+          "currency": "VES",
+          "amount": 29207.99,
+          "usd": 33.52,
+          "origin": "Banco Demo Dos",
+          "reference": "TRF-DEMO-0001"
+        }
+      ],
+      "paidUsd": 83.52,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    },
+    {
+      "number": "FV-000012",
+      "control": "00-00000012",
+      "issued": "2026-10-06 13:20",
+      "client": "Distribuciones del Sur, C.A.",
+      "clientId": 4,
+      "seller": "José",
+      "condition": "credito",
+      "paymentColumn": "—",
+      "subtotal": 726,
+      "discount": 0,
+      "discountReason": null,
+      "discountAuthorizedBy": null,
+      "ivaPct": 16,
+      "iva": 116.16,
+      "total": 842.16,
+      "rate": 871.36,
+      "creditDays": 45,
+      "due": "2026-11-20",
+      "status": "EMITIDA",
+      "lines": [
+        {
+          "code": "ALI-001",
+          "product": "Arroz 1kg (caja x20)",
+          "saleType": "bulto",
+          "qty": 20,
+          "level": "Precio 1",
+          "price": 23.1,
+          "subtotal": 462
+        },
+        {
+          "code": "LIM-001",
+          "product": "Detergente en Polvo 1kg (caja x12)",
+          "saleType": "bulto",
+          "qty": 10,
+          "level": "Precio 1",
+          "price": 26.4,
+          "subtotal": 264
+        }
+      ],
+      "payments": [],
+      "paidUsd": null,
+      "change": null,
+      "laterPayments": [],
+      "voided": null
+    }
+  ],
+  "invoiceDraft": {
+    "extension": true,
+    "number": "FV-000013",
+    "client": "Mercadito Central",
+    "seller": "Carlos",
+    "condition": "contado",
+    "subtotal": 100,
+    "discount": 0,
+    "ivaPct": 16,
+    "iva": 16,
+    "total": 116,
+    "rate": 871.36,
+    "lines": [
+      {
+        "code": "ALI-001",
+        "product": "Arroz 1kg (caja x20)",
+        "saleType": "bulto",
+        "qty": 1,
+        "level": "Precio 1",
+        "price": 21,
+        "subtotal": 21
+      },
+      {
+        "code": "ALI-002",
+        "product": "Harina de Maíz 1kg (caja x20)",
+        "saleType": "bulto",
+        "qty": 1,
+        "level": "Precio 1",
+        "price": 19,
+        "subtotal": 19
+      },
+      {
+        "code": "LIM-002",
+        "product": "Jabón de Barra (caja x30)",
+        "saleType": "bulto",
+        "qty": 4,
+        "level": "Precio 1",
+        "price": 15,
+        "subtotal": 60
+      }
+    ],
+    "payments": [
+      {
+        "method": "zelle",
+        "currency": "USD",
+        "amount": 70,
+        "usd": 70,
+        "origin": "Banco Demo Uno",
+        "reference": "ZELLE-DEMO-0013"
+      },
+      {
+        "method": "transferencia",
+        "currency": "VES",
+        "amount": 42260.96,
+        "usd": 48.5,
+        "origin": "Banco Demo Dos",
+        "reference": "TRF-DEMO-0013"
+      }
+    ],
+    "paidUsd": 118.5,
+    "change": {
+      "usd": 2.5,
+      "method": "pago_movil",
+      "origin": "Banco Demo Uno - ****************0001",
+      "note": "Requiere referencia bancaria y autorización de un supervisor al facturar"
+    }
+  },
+  "creditNotes": [
+    {
+      "number": "NC-000001",
+      "client": "Abasto La Esquina",
+      "invoice": "FV-000007",
+      "amount": 66.12,
+      "available": 66.12,
+      "status": "disponible",
+      "date": "2026-10-03 12:30",
+      "reason": "Anulación de factura FV-000007"
+    }
+  ],
+  "banks": [
+    {
+      "name": "Banco Demo Uno",
+      "type": "CORRIENTE",
+      "status": "ACTIVO"
+    },
+    {
+      "name": "Banco Demo Dos",
+      "type": "AHORRO",
+      "status": "ACTIVO"
+    }
+  ],
+  "bankAccounts": [
+    {
+      "bank": "Banco Demo Uno",
+      "masked": "****0001",
+      "type": "CORRIENTE",
+      "initialUsd": 1000,
+      "initialVes": 0,
+      "balanceUsd": 1385.8,
+      "balanceVes": 0
+    },
+    {
+      "bank": "Banco Demo Dos",
+      "masked": "****0002",
+      "type": "AHORRO",
+      "initialUsd": 200,
+      "initialVes": 174272,
+      "balanceUsd": 824.12,
+      "balanceVes": 705838.6
+    }
+  ],
+  "bankMovements": [
+    {
+      "date": "2026-08-10 10:00",
+      "account": "Banco Demo Dos",
+      "type": "abono",
+      "usd": 90,
+      "ves": 67247.1,
+      "rate": 747.19,
+      "origin": "Cobro factura FV-000003",
+      "reference": "TRF-DEMO-0003",
+      "description": "Cobro a cliente: Comercial Occidente, C.A.",
+      "user": "cajero.demo"
+    },
+    {
+      "date": "2026-09-30 10:00",
+      "account": "Banco Demo Uno",
+      "type": "abono",
+      "usd": 339.3,
+      "ves": null,
+      "rate": null,
+      "origin": "Cobro factura FV-000005",
+      "reference": "ZELLE-DEMO-0004",
+      "description": "Cobro a cliente: Supermercado Norte, C.A.",
+      "user": "cajero.demo"
+    },
+    {
+      "date": "2026-09-30 16:00",
+      "account": "Banco Demo Uno",
+      "type": "cargo",
+      "usd": 396,
+      "ves": null,
+      "rate": null,
+      "origin": "Pago a proveedor OC-000003",
+      "reference": "TRF-DEMO-0003P",
+      "description": "Pago a proveedor: Insumos de Limpieza, C.A.",
+      "user": "admin.demo"
+    },
+    {
+      "date": "2026-10-01 09:30",
+      "account": "Banco Demo Uno",
+      "type": "cargo",
+      "usd": 500,
+      "ves": null,
+      "rate": null,
+      "origin": "Pago a proveedor OC-000002",
+      "reference": "TRF-DEMO-0002P",
+      "description": "Pago a proveedor: Alimentos Mayoristas, C.A.",
+      "user": "admin.demo"
+    },
+    {
+      "date": "2026-10-02 11:00",
+      "account": "Banco Demo Uno",
+      "type": "cargo",
+      "usd": 7.5,
+      "ves": null,
+      "rate": null,
+      "origin": "Pago de comisiones",
+      "reference": "TRF-DEMO-0001",
+      "description": "Pago de comisiones a vendedor #2",
+      "user": "admin.demo"
+    },
+    {
+      "date": "2026-10-04 10:00",
+      "account": "Banco Demo Uno",
+      "type": "abono",
+      "usd": 200,
+      "ves": null,
+      "rate": null,
+      "origin": "Cobro factura FV-000006",
+      "reference": "ZELLE-DEMO-0003",
+      "description": "Cobro a cliente: Comercial Occidente, C.A.",
+      "user": "cajero.demo"
+    },
+    {
+      "date": "2026-10-05 15:30",
+      "account": "Banco Demo Uno",
+      "type": "abono",
+      "usd": 700,
+      "ves": null,
+      "rate": null,
+      "origin": "Cobro factura FV-000008",
+      "reference": "ZELLE-DEMO-0002",
+      "description": "Cobro a cliente: Bodega Los Pinos",
+      "user": "cajero.demo"
+    },
+    {
+      "date": "2026-10-05 15:30",
+      "account": "Banco Demo Dos",
+      "type": "abono",
+      "usd": 500.6,
+      "ves": 435111.51,
+      "rate": 869.18,
+      "origin": "Cobro factura FV-000008",
+      "reference": "TRF-DEMO-0002",
+      "description": "Cobro a cliente: Bodega Los Pinos",
+      "user": "cajero.demo"
+    },
+    {
+      "date": "2026-10-06 11:40",
+      "account": "Banco Demo Uno",
+      "type": "abono",
+      "usd": 50,
+      "ves": null,
+      "rate": null,
+      "origin": "Cobro factura FV-000011",
+      "reference": "ZELLE-DEMO-0001",
+      "description": "Cobro a cliente: Mercadito Central",
+      "user": "cajero.demo"
+    },
+    {
+      "date": "2026-10-06 11:40",
+      "account": "Banco Demo Dos",
+      "type": "abono",
+      "usd": 33.52,
+      "ves": 29207.99,
+      "rate": 871.36,
+      "origin": "Cobro factura FV-000011",
+      "reference": "TRF-DEMO-0001",
+      "description": "Cobro a cliente: Mercadito Central",
+      "user": "cajero.demo"
+    }
+  ],
+  "cashRegisters": [
+    {
+      "name": "Caja Principal",
+      "status": "ABIERTA",
+      "cashier": "admin.demo",
+      "opened": "2026-10-06 08:00",
+      "closed": null,
+      "openingBalance": 100,
+      "closingBalance": null,
+      "movements": 5,
+      "inflow": 105,
+      "outflow": 16.64,
+      "computedBalance": 188.36
+    },
+    {
+      "name": "Caja 2",
+      "status": "CERRADA",
+      "cashier": "admin.demo",
+      "opened": "2026-10-03 08:00",
+      "closed": "2026-10-03 18:00",
+      "openingBalance": 80,
+      "closingBalance": 146.12,
+      "movements": 3,
+      "inflow": 70,
+      "outflow": 3.88,
+      "computedBalance": 146.12
+    }
+  ],
+  "cashMovements": [
+    {
+      "register": "Caja Principal",
+      "date": "2026-10-06 09:12",
+      "type": "entrada",
+      "amount": 100,
+      "description": "Cobro a cliente: Abasto La Esquina",
+      "origin": "Pago de cobro (Efectivo USD)"
+    },
+    {
+      "register": "Caja Principal",
+      "date": "2026-10-06 09:12",
+      "type": "entrada",
+      "amount": 3.36,
+      "description": "Cobro a cliente: Abasto La Esquina",
+      "origin": "Pago de cobro (Efectivo VES)"
+    },
+    {
+      "register": "Caja Principal",
+      "date": "2026-10-06 09:12",
+      "type": "entrada",
+      "amount": 1.64,
+      "description": "Excedente de pago factura FV-000009 (vuelto pendiente)",
+      "origin": "Excedente de pago"
+    },
+    {
+      "register": "Caja Principal",
+      "date": "2026-10-06 09:12",
+      "type": "salida",
+      "amount": 1.64,
+      "description": "Vuelto factura FV-000009 - Abasto La Esquina",
+      "origin": "Vuelto"
+    },
+    {
+      "register": "Caja Principal",
+      "date": "2026-10-06 12:15",
+      "type": "salida",
+      "amount": 15,
+      "description": "Compra de bolsas y cinta",
+      "origin": "Movimiento manual"
+    },
+    {
+      "register": "Caja 2",
+      "date": "2026-10-03 12:00",
+      "type": "entrada",
+      "amount": 66.12,
+      "description": "Cobro a cliente: Abasto La Esquina",
+      "origin": "Pago de cobro (Efectivo USD)"
+    },
+    {
+      "register": "Caja 2",
+      "date": "2026-10-03 12:00",
+      "type": "entrada",
+      "amount": 3.88,
+      "description": "Excedente de pago factura FV-000007 (vuelto pendiente)",
+      "origin": "Excedente de pago"
+    },
+    {
+      "register": "Caja 2",
+      "date": "2026-10-03 12:00",
+      "type": "salida",
+      "amount": 3.88,
+      "description": "Vuelto factura FV-000007 - Abasto La Esquina",
+      "origin": "Vuelto"
+    }
+  ],
+  "receivables": [
+    {
+      "invoice": "FV-000001",
+      "client": "Distribuciones del Sur, C.A.",
+      "clientId": 4,
+      "seller": "José",
+      "total": 501.12,
+      "paid": 0,
+      "balance": 501.12,
+      "creditBalance": 0,
+      "days": 153,
+      "issued": "2026-05-06",
+      "due": "2026-06-20",
+      "overdueDays": 108,
+      "status": "vencida"
+    },
+    {
+      "invoice": "FV-000002",
+      "client": "Bodega Los Pinos",
+      "clientId": 5,
+      "seller": "María",
+      "total": 243.6,
+      "paid": 0,
+      "balance": 243.6,
+      "creditBalance": 0,
+      "days": 100,
+      "issued": "2026-06-28",
+      "due": "2026-07-28",
+      "overdueDays": 70,
+      "status": "vencida"
+    },
+    {
+      "invoice": "FV-000003",
+      "client": "Comercial Occidente, C.A.",
+      "clientId": 6,
+      "seller": "José",
+      "total": 331.76,
+      "paid": 90,
+      "balance": 241.76,
+      "creditBalance": 0,
+      "days": 72,
+      "issued": "2026-07-26",
+      "due": "2026-08-25",
+      "overdueDays": 42,
+      "status": "vencida"
+    },
+    {
+      "invoice": "FV-000004",
+      "client": "Supermercado Norte, C.A.",
+      "clientId": 3,
+      "seller": "María",
+      "total": 364.7,
+      "paid": 0,
+      "balance": 364.7,
+      "creditBalance": 0,
+      "days": 46,
+      "issued": "2026-08-21",
+      "due": "2026-09-20",
+      "overdueDays": 16,
+      "status": "vencida"
+    },
+    {
+      "invoice": "FV-000005",
+      "client": "Supermercado Norte, C.A.",
+      "clientId": 3,
+      "seller": "María",
+      "total": 339.3,
+      "paid": 339.3,
+      "balance": 0,
+      "creditBalance": 0,
+      "days": 21,
+      "issued": "2026-09-15",
+      "due": "2026-10-15",
+      "overdueDays": 0,
+      "status": "pagada"
+    },
+    {
+      "invoice": "FV-000006",
+      "client": "Comercial Occidente, C.A.",
+      "clientId": 6,
+      "seller": "José",
+      "total": 755.16,
+      "paid": 200,
+      "balance": 555.16,
+      "creditBalance": 0,
+      "days": 5,
+      "issued": "2026-10-01",
+      "due": "2026-10-31",
+      "overdueDays": 0,
+      "status": "parcial"
+    },
+    {
+      "invoice": "FV-000010",
+      "client": "Supermercado Norte, C.A.",
+      "clientId": 3,
+      "seller": "María",
+      "total": 417.6,
+      "paid": 0,
+      "balance": 417.6,
+      "creditBalance": 0,
+      "days": 0,
+      "issued": "2026-10-06",
+      "due": "2026-11-05",
+      "overdueDays": 0,
+      "status": "pendiente"
+    }
+  ],
+  "receivablesByClient": [
+    {
+      "clientId": 3,
+      "client": "Supermercado Norte, C.A.",
+      "balance": 782.3,
+      "creditBalance": 0,
+      "days": 46,
+      "issued": "2026-08-21",
+      "status": "vencida",
+      "invoices": [
+        "FV-000004",
+        "FV-000010"
+      ]
+    },
+    {
+      "clientId": 4,
+      "client": "Distribuciones del Sur, C.A.",
+      "balance": 501.12,
+      "creditBalance": 0,
+      "days": 153,
+      "issued": "2026-05-06",
+      "status": "vencida",
+      "invoices": [
+        "FV-000001"
+      ]
+    },
+    {
+      "clientId": 5,
+      "client": "Bodega Los Pinos",
+      "balance": 243.6,
+      "creditBalance": 0,
+      "days": 100,
+      "issued": "2026-06-28",
+      "status": "vencida",
+      "invoices": [
+        "FV-000002"
+      ]
+    },
+    {
+      "clientId": 6,
+      "client": "Comercial Occidente, C.A.",
+      "balance": 796.92,
+      "creditBalance": 0,
+      "days": 72,
+      "issued": "2026-07-26",
+      "status": "vencida",
+      "invoices": [
+        "FV-000003",
+        "FV-000006"
+      ]
+    }
+  ],
+  "aging": {
+    "cutoff": "2026-10-06",
+    "rows": [
+      {
+        "invoice": "FV-000001",
+        "client": "Distribuciones del Sur, C.A.",
+        "due": "2026-06-20",
+        "balance": 501.12,
+        "overdueDays": 108,
+        "elapsedDays": 153,
+        "range": "90+"
+      },
+      {
+        "invoice": "FV-000002",
+        "client": "Bodega Los Pinos",
+        "due": "2026-07-28",
+        "balance": 243.6,
+        "overdueDays": 70,
+        "elapsedDays": 100,
+        "range": "61-90"
+      },
+      {
+        "invoice": "FV-000003",
+        "client": "Comercial Occidente, C.A.",
+        "due": "2026-08-25",
+        "balance": 241.76,
+        "overdueDays": 42,
+        "elapsedDays": 72,
+        "range": "31-60"
+      },
+      {
+        "invoice": "FV-000004",
+        "client": "Supermercado Norte, C.A.",
+        "due": "2026-09-20",
+        "balance": 364.7,
+        "overdueDays": 16,
+        "elapsedDays": 46,
+        "range": "1-30"
+      },
+      {
+        "invoice": "FV-000006",
+        "client": "Comercial Occidente, C.A.",
+        "due": "2026-10-31",
+        "balance": 555.16,
+        "overdueDays": 0,
+        "elapsedDays": 5,
+        "range": "Vigente"
+      },
+      {
+        "invoice": "FV-000010",
+        "client": "Supermercado Norte, C.A.",
+        "due": "2026-11-05",
+        "balance": 417.6,
+        "overdueDays": 0,
+        "elapsedDays": 0,
+        "range": "Vigente"
+      }
+    ],
+    "totals": {
+      "Vigente": 972.76,
+      "1-30": 364.7,
+      "31-60": 241.76,
+      "61-90": 243.6,
+      "90+": 501.12
+    },
+    "total": 2323.94
+  },
+  "payables": [
+    {
+      "purchase": "OC-000001",
+      "supplier": "Bebidas y Refrescos, C.A.",
+      "balance": 936,
+      "issued": "2026-08-30",
+      "days": 37,
+      "due": "2026-09-14",
+      "overdueDays": 22,
+      "status": "vencida"
+    },
+    {
+      "purchase": "OC-000002",
+      "supplier": "Alimentos Mayoristas, C.A.",
+      "balance": 970,
+      "issued": "2026-09-17",
+      "days": 19,
+      "due": "2026-10-17",
+      "overdueDays": 0,
+      "status": "parcial"
+    }
+  ],
+  "commissions": [
+    {
+      "id": 1,
+      "invoice": "FV-000001",
+      "client": "Distribuciones del Sur, C.A.",
+      "seller": "José",
+      "date": "2026-05-06 10:30",
+      "lines": 1,
+      "base": 150,
+      "sale": 162,
+      "commission": 12,
+      "status": "pendiente",
+      "breakdown": [
+        {
+          "product": "Jabón de Barra (caja x30)",
+          "qty": 10,
+          "base": 150,
+          "sale": 162,
+          "commission": 12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "invoice": "FV-000003",
+      "client": "Comercial Occidente, C.A.",
+      "seller": "José",
+      "date": "2026-07-26 09:40",
+      "lines": 1,
+      "base": 90,
+      "sale": 96,
+      "commission": 6,
+      "status": "pendiente",
+      "breakdown": [
+        {
+          "product": "Refresco Cola 2L (caja x6)",
+          "qty": 10,
+          "base": 90,
+          "sale": 96,
+          "commission": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "invoice": "FV-000004",
+      "client": "Supermercado Norte, C.A.",
+      "seller": "María",
+      "date": "2026-08-21 16:05",
+      "lines": 1,
+      "base": 108,
+      "sale": 122.4,
+      "commission": 14.4,
+      "status": "pendiente",
+      "breakdown": [
+        {
+          "product": "Papas Fritas 100g (caja x36)",
+          "qty": 4,
+          "base": 108,
+          "sale": 122.4,
+          "commission": 14.4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "invoice": "FV-000005",
+      "client": "Supermercado Norte, C.A.",
+      "seller": "María",
+      "date": "2026-09-15 10:10",
+      "lines": 1,
+      "base": 105,
+      "sale": 112.5,
+      "commission": 7.5,
+      "status": "pagada",
+      "breakdown": [
+        {
+          "product": "Arroz 1kg (caja x20)",
+          "qty": 5,
+          "base": 105,
+          "sale": 112.5,
+          "commission": 7.5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "invoice": "FV-000008",
+      "client": "Bodega Los Pinos",
+      "seller": "María",
+      "date": "2026-10-05 15:30",
+      "lines": 1,
+      "base": 180,
+      "sale": 195,
+      "commission": 15,
+      "status": "liberada",
+      "breakdown": [
+        {
+          "product": "Agua Mineral 600ml (caja x24)",
+          "qty": 25,
+          "base": 180,
+          "sale": 195,
+          "commission": 15
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "invoice": "FV-000009",
+      "client": "Abasto La Esquina",
+      "seller": "Carlos",
+      "date": "2026-10-06 09:12",
+      "lines": 2,
+      "base": 66,
+      "sale": 71.1,
+      "commission": 5.1,
+      "status": "liberada",
+      "breakdown": [
+        {
+          "product": "Arroz 1kg (caja x20)",
+          "qty": 1,
+          "base": 21,
+          "sale": 22.5,
+          "commission": 1.5
+        },
+        {
+          "product": "Jabón de Barra (caja x30)",
+          "qty": 3,
+          "base": 45,
+          "sale": 48.6,
+          "commission": 3.6
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "invoice": "FV-000010",
+      "client": "Supermercado Norte, C.A.",
+      "seller": "María",
+      "date": "2026-10-06 10:05",
+      "lines": 1,
+      "base": 136,
+      "sale": 144,
+      "commission": 8,
+      "status": "pendiente",
+      "breakdown": [
+        {
+          "product": "Aceite Vegetal 1L (caja x12)",
+          "qty": 4,
+          "base": 136,
+          "sale": 144,
+          "commission": 8
+        }
+      ]
+    }
+  ],
+  "commissionPayments": [
+    {
+      "seller": "María",
+      "date": "2026-10-02 11:00",
+      "method": "transferencia",
+      "origin": "Banco Demo Uno",
+      "amount": 7.5,
+      "reference": "TRF-DEMO-0001",
+      "invoices": [
+        "FV-000005"
+      ]
+    }
+  ],
+  "purchases": {
+    "orders": [
+      {
+        "number": "ODC-000001",
+        "supplier": "Bebidas y Refrescos, C.A.",
+        "date": "2026-08-20",
+        "expected": "2026-08-27",
+        "products": 2,
+        "received": 140,
+        "total": 936,
+        "status": "COMPLETA"
+      },
+      {
+        "number": "ODC-000002",
+        "supplier": "Alimentos Mayoristas, C.A.",
+        "date": "2026-09-10",
+        "expected": "2026-09-17",
+        "products": 2,
+        "received": 90,
+        "total": 1470,
+        "status": "COMPLETA"
+      },
+      {
+        "number": "ODC-000003",
+        "supplier": "Bebidas y Refrescos, C.A.",
+        "date": "2026-09-25",
+        "expected": "2026-10-02",
+        "products": 2,
+        "received": 140,
+        "total": 1152,
+        "status": "PARCIAL"
+      },
+      {
+        "number": "ODC-000004",
+        "supplier": "Alimentos Mayoristas, C.A.",
+        "date": "2026-10-05",
+        "expected": "2026-10-12",
+        "products": 1,
+        "received": 0,
+        "total": 594,
+        "status": "PENDIENTE"
+      },
+      {
+        "number": "ODC-000005",
+        "supplier": "Insumos de Limpieza, C.A.",
+        "date": "2026-09-28",
+        "expected": "2026-09-30",
+        "products": 1,
+        "received": 20,
+        "total": 396,
+        "status": "COMPLETA"
+      }
+    ],
+    "receptions": [
+      {
+        "number": "NR-000001",
+        "order": "ODC-000001",
+        "supplier": "Bebidas y Refrescos, C.A.",
+        "date": "2026-08-30",
+        "user": "cajero.demo",
+        "status": "FACTURADA"
+      },
+      {
+        "number": "NR-000002",
+        "order": "ODC-000002",
+        "supplier": "Alimentos Mayoristas, C.A.",
+        "date": "2026-09-17",
+        "user": "cajero.demo",
+        "status": "FACTURADA"
+      },
+      {
+        "number": "NR-000003",
+        "order": "ODC-000003",
+        "supplier": "Bebidas y Refrescos, C.A.",
+        "date": "2026-10-02",
+        "user": "cajero.demo",
+        "status": "RECIBIDA"
+      },
+      {
+        "number": "NR-000004",
+        "order": "ODC-000005",
+        "supplier": "Insumos de Limpieza, C.A.",
+        "date": "2026-09-30",
+        "user": "cajero.demo",
+        "status": "FACTURADA"
+      }
+    ],
+    "returns": [
+      {
+        "number": "ND-000001",
+        "reception": "NR-000003",
+        "reason": "Daño en Tránsito",
+        "qty": 2,
+        "status": "PENDIENTE",
+        "date": "2026-10-02"
+      }
+    ],
+    "invoices": [
+      {
+        "number": "OC-000001",
+        "order": "ODC-000001",
+        "supplier": "Bebidas y Refrescos, C.A.",
+        "date": "2026-08-30",
+        "condition": "credito",
+        "creditDays": 15,
+        "due": "2026-09-14",
+        "total": 936,
+        "status": "EMITIDA",
+        "paid": 0,
+        "balance": 936
+      },
+      {
+        "number": "OC-000002",
+        "order": "ODC-000002",
+        "supplier": "Alimentos Mayoristas, C.A.",
+        "date": "2026-09-17",
+        "condition": "credito",
+        "creditDays": 30,
+        "due": "2026-10-17",
+        "total": 1470,
+        "status": "EMITIDA",
+        "paid": 500,
+        "balance": 970
+      },
+      {
+        "number": "OC-000003",
+        "order": "ODC-000005",
+        "supplier": "Insumos de Limpieza, C.A.",
+        "date": "2026-09-30",
+        "condition": "contado",
+        "creditDays": null,
+        "due": null,
+        "total": 396,
+        "status": "EMITIDA",
+        "paid": 396,
+        "balance": 0
+      }
+    ]
+  },
+  "dashboard": {
+    "salesToday": 1255.1,
+    "salesVsYesterdayPct": 21.27,
+    "receivable": 2323.94,
+    "receivableOverdueInvoices": 4,
+    "payable": 1906,
+    "payableOverdue": 1,
+    "lowStock": 2,
+    "week": [
+      {
+        "day": "2026-09-30",
+        "amount": 0
+      },
+      {
+        "day": "2026-10-01",
+        "amount": 651
+      },
+      {
+        "day": "2026-10-02",
+        "amount": 0
+      },
+      {
+        "day": "2026-10-03",
+        "amount": 0
+      },
+      {
+        "day": "2026-10-04",
+        "amount": 0
+      },
+      {
+        "day": "2026-10-05",
+        "amount": 1035
+      },
+      {
+        "day": "2026-10-06",
+        "amount": 1255.1
+      }
+    ],
+    "activeRegisters": [
+      {
+        "name": "Caja Principal",
+        "cashier": "admin.demo",
+        "status": "ABIERTA"
+      }
+    ],
+    "recentInvoices": [
+      {
+        "number": "FV-000012",
+        "client": "Distribuciones del Sur, C.A.",
+        "amount": 726,
+        "status": "EMITIDA"
+      },
+      {
+        "number": "FV-000011",
+        "client": "Mercadito Central",
+        "amount": 72,
+        "status": "EMITIDA"
+      },
+      {
+        "number": "FV-000010",
+        "client": "Supermercado Norte, C.A.",
+        "amount": 368,
+        "status": "EMITIDA"
+      },
+      {
+        "number": "FV-000009",
+        "client": "Abasto La Esquina",
+        "amount": 89.1,
+        "status": "EMITIDA"
+      },
+      {
+        "number": "FV-000008",
+        "client": "Bodega Los Pinos",
+        "amount": 1035,
+        "status": "EMITIDA"
+      }
+    ],
+    "stockAlerts": [
+      {
+        "code": "SNK-001",
+        "name": "Galletas de Soda (caja x24)",
+        "category": "Snacks",
+        "units": 70,
+        "expires": "2026-10-20"
+      },
+      {
+        "code": "BEB-003",
+        "name": "Jugo de Naranja 1L (caja x12)",
+        "category": "Bebidas",
+        "units": 95,
+        "expires": "2026-10-25"
+      }
+    ]
+  },
+  "notifications": [
+    {
+      "title": "Cuentas por cobrar vencidas",
+      "detail": "4 facturas vencidas — saldo $1,351.18",
+      "severity": "alta",
+      "goesTo": "Cuentas por Cobrar"
+    },
+    {
+      "title": "Cuentas por pagar vencidas",
+      "detail": "1 compra vencida — saldo $936.00",
+      "severity": "alta",
+      "goesTo": "Cuentas por Pagar"
+    },
+    {
+      "title": "Stock bajo",
+      "detail": "2 productos por debajo de su mínimo",
+      "severity": "media",
+      "goesTo": "Productos"
+    },
+    {
+      "title": "Productos por vencer",
+      "detail": "2 productos vencen en 30 días o ya vencieron",
+      "severity": "media",
+      "goesTo": "Productos"
+    }
+  ],
+  "audit": [
+    {
+      "date": "2026-10-06 13:20",
+      "user": "vendedor.demo",
+      "module": "VENTAS",
+      "action": "EMISION_FACTURA",
+      "detail": "Factura FV-000012 crédito, total a pagar 842.16"
+    },
+    {
+      "date": "2026-10-06 11:40",
+      "user": "cajero.demo",
+      "module": "VENTAS",
+      "action": "EMISION_FACTURA",
+      "detail": "Factura FV-000011 contado: Zelle USD 50.00 + Transferencia VES"
+    },
+    {
+      "date": "2026-10-06 10:05",
+      "user": "cajero.demo",
+      "module": "VENTAS",
+      "action": "EMISION_FACTURA",
+      "detail": "Factura FV-000010 crédito, descuento 8.00 autorizado por admin.demo"
+    },
+    {
+      "date": "2026-10-06 09:12",
+      "user": "cajero.demo",
+      "module": "VENTAS",
+      "action": "EMISION_FACTURA",
+      "detail": "Factura FV-000009 contado, vuelto 1.64 efectivo"
+    },
+    {
+      "date": "2026-10-06 08:30",
+      "user": "admin.demo",
+      "module": "TASAS",
+      "action": "CAMBIO_TASA",
+      "detail": "Tasa BCV 871.36 / paralelo 970.00 / COP 3300.00"
+    },
+    {
+      "date": "2026-10-06 08:00",
+      "user": "admin.demo",
+      "module": "CAJAS",
+      "action": "APERTURA_CAJA",
+      "detail": "Caja 'Caja Principal' abierta con saldo 100.00"
+    },
+    {
+      "date": "2026-10-03 12:30",
+      "user": "admin.demo",
+      "module": "VENTAS",
+      "action": "ANULACION_FACTURA",
+      "detail": "Factura FV-000007 anulada; nota de crédito NC-000001"
+    },
+    {
+      "date": "2026-10-02 11:00",
+      "user": "admin.demo",
+      "module": "COMISIONES",
+      "action": "PAGO_COMISION",
+      "detail": "Pago de comisiones a María por 7.50"
+    }
+  ]
+}

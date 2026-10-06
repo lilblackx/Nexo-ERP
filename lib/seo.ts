@@ -8,7 +8,7 @@ export const SITE_TITLE = "Nexo ERP: sistema de gestión para distribuidoras en 
 export function siteDescription() {
   const pagos = [
     features.pagoMixto && "facturación con pago mixto",
-    features.pagoMovil && "pago móvil",
+    features.pagoMovilComoCobro && "pago móvil",
   ].filter(Boolean);
   const parts = [
     "Sistema de gestión de escritorio para distribuidoras y mayoristas.",

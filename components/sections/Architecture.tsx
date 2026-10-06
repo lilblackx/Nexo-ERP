@@ -37,7 +37,7 @@ const FACTS = [
   },
   {
     title: "Licencia",
-    text: features.ed25519
+    text: features.licenciaFirmada
       ? "La licencia se verifica con firma criptográfica Ed25519." // TODO(luis): confirmar antes de activar
       : "La licencia se administra desde Configuración, en la pestaña Licencia.",
   },
@@ -142,7 +142,7 @@ export default function Architecture() {
           </div>
         </div>
 
-        {features.ed25519 && (
+        {features.licenciaFirmada && (
           // TODO(luis): terminal de licencia offline. Solo se muestra si ed25519 es true.
           <pre className="num mt-12 overflow-x-auto border border-white/25 p-4 text-[13px] leading-7 text-tint-100">
             {"$ licencia.verificar()\n✓ firma Ed25519 válida"}

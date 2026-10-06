@@ -73,8 +73,8 @@ export const DEMO_PAYMENT = (() => {
 /** Métodos que se muestran: respetan `features`. USDT y COP no son métodos de cobro por ahora. */
 export const PAYMENT_METHODS = [
   { id: "cash", label: "Efectivo USD" },
-  ...(features.pagoMovil ? [{ id: "pm", label: "Pago móvil (Bs.)" }] : []),
-  ...(features.usdt ? [{ id: "usdt", label: "USDT" }] : []),
+  ...(features.pagoMovilComoCobro ? [{ id: "pm", label: "Pago móvil (Bs.)" }] : []),
+  ...(features.binancePay ? [{ id: "usdt", label: "USDT" }] : []),
 ] as const;
 
 /* ---------------------------- Facturación --------------------------- */
