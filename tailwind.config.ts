@@ -54,11 +54,11 @@ const config: Config = {
         danger: { DEFAULT: "#DC2626", bg: "#FEE2E2", text: "#B91C1C" },
         info: { DEFAULT: "#0284C7", bg: "#EFF6FF", text: "#0369A1" },
       },
-      // Inter (titulares y texto) y JetBrains Mono (cifras y códigos). `display` es un alias de `sans`.
+      // Bricolage Grotesque (titulares), Instrument Sans (texto) e IBM Plex Mono (cifras y códigos).
       fontFamily: {
-        display: ["var(--font-inter)", "Segoe UI", "Arial", "sans-serif"],
-        sans: ["var(--font-inter)", "Segoe UI", "Arial", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "ui-monospace", "Menlo", "Consolas", "monospace"],
+        display: ["var(--font-display)", "Segoe UI", "Arial", "sans-serif"],
+        sans: ["var(--font-sans)", "Segoe UI", "Arial", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "Menlo", "Consolas", "monospace"],
       },
       // Escala fluida: gran contraste entre titular, subtítulo y texto.
       fontSize: {

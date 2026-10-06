@@ -9,12 +9,11 @@ import ScreenGallery from "./ScreenGallery";
 export default function RealScreens() {
   const screens = resolveScreens();
   return (
-    <section id="capturas" className="on-blue bg-primary-deep py-20 text-white sm:py-28" aria-labelledby="capturas-titulo">
+    <section id="capturas" className="border-y border-line bg-white py-20 sm:py-28" aria-labelledby="capturas-titulo">
       <div className="container">
         <SectionHead
           n="05"
           label="La app, tal cual"
-          onBlue
           title={<span id="capturas-titulo">Así se ve Nexo por dentro, sin retoques.</span>}
         >
           Capturas de la aplicación real, con una base de demostración: los datos y las tasas son de ejemplo.

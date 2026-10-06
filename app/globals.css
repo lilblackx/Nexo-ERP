@@ -15,12 +15,12 @@
     font-feature-settings: "kern", "liga", "calt";
   }
 
-  /* Titulares: Inter 700 a 800, tracking apretado, interlineado de 1.0 a 1.1. */
+  /* Titulares: Bricolage Grotesque 700 a 800, tracking apretado, interlineado de 1.0 a 1.1. */
   h1,
   h2,
   h3,
   h4 {
-    @apply font-sans text-fg;
+    @apply font-display text-fg;
     text-wrap: balance;
   }
   h1 {
@@ -54,7 +54,7 @@
 }
 
 @layer utilities {
-  /* Cifras: JetBrains Mono con números tabulares (montos, tasas, códigos de factura, porcentajes). */
+  /* Cifras: IBM Plex Mono con números tabulares (montos, tasas, códigos de factura, porcentajes). */
   .num {
     @apply font-mono font-medium tabular-nums;
     letter-spacing: -0.02em;

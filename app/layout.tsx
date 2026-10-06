@@ -1,24 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_TITLE, siteDescription, softwareJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
 
 /*
- * Tipografía de la landing: Inter para titulares y texto, JetBrains Mono para cifras y códigos.
- * Se cargan con next/font (autoalojadas, sin pedir nada a Google en tiempo de ejecución).
- * `latin` + `latin-ext` cubren la ñ, las tildes y los signos del español de Venezuela.
+ * Tipografía de la landing (la misma de la versión original del sitio):
+ * - Bricolage Grotesque: titulares, con carácter y buen peso.
+ * - Instrument Sans: texto, sobria y legible, con ñ y tildes bien resueltas.
+ * - IBM Plex Mono: cifras tabulares de aspecto contable (montos, tasas, códigos).
+ * `latin` + `latin-ext` cubren la ñ, las tildes y los signos del español. Autoalojadas con next/font.
  * Los AppFrame usan la tipografía de la app (Segoe UI / system-ui), sin webfonts adicionales.
  */
-const sans = Inter({
+const display = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
+  variable: "--font-display",
   display: "swap",
 });
-const mono = JetBrains_Mono({
+const sans = Instrument_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  variable: "--font-jetbrains",
+  variable: "--font-sans",
+  display: "swap",
+});
+const mono = IBM_Plex_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -52,7 +59,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-VE" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="es-VE" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>
         <a
           href="#contenido"

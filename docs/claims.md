@@ -57,6 +57,7 @@ Estados: IMPLEMENTADO · PARCIAL (se redacta con el matiz de la columna "Redacci
 | C45 | La mercancía entra al stock al registrar la recepción | — | IMPLEMENTADO | compras | 02-modulos/compras.md |
 | C46 | Las estaciones solo hablan con el SQL Server de la red; solo el servidor se conecta a internet (renovación de la licencia) | licenciaPorEstaciones | IMPLEMENTADO | licenciaFirmada | 04-licenciamiento-y-sin-internet.md §2 |
 | C47 | Un cliente o vendedor inactivo no puede facturar; nada se borra | — | IMPLEMENTADO | — | 02-modulos/clientes.md, vendedores.md |
+| C49 | Las reglas (stock, saldos, cierres) se refuerzan en SQL Server con triggers y bloqueos de fila | — | IMPLEMENTADO | — | 09-diferenciales-reales.md §9 |
 | C48 | Cuentas por cobrar: no hay recordatorios, intereses de mora ni cobro en línea (se dice solo como límite) | — | NO ENCONTRADO (límite) | — | 02-modulos/cuentas-por-cobrar.md |
 
 ## Nunca se afirma (NO ENCONTRADO)
@@ -93,7 +94,7 @@ Cada frase que afirma algo sobre el producto, por sección. Las cifras de los mo
 | 03 Cobro mixto (`MixedPayment.tsx`) | Varias formas de pago y monedas; conversión VES ÷ BCV, COP ÷ tasa COP, USDT 1 a 1; sin tolerancia, exceso es vuelto; métodos y que son registros manuales sin integración; brecha informativa; la factura queda en dólares | C01–C07, C09, C12, C14 |
 | 04 Módulos (`Modules.tsx`) | Once módulos y sus límites (ver C01–C33, C42, C43, C47, C48) | C01–C33, C42, C43, C47, C48 |
 | 05 La app, tal cual (`RealScreens.tsx`) | Pies de captura (qué muestra cada una) | C01, C06, C12, C18–C20, C23, C25, C29 |
-| 06 Red local y licencia (`Architecture.tsx`) | Plano: servidor con SQL Server y servicio de licencia, estaciones, "renueva por internet al menos cada 7 días", "no salen a internet"; Ed25519 verificada localmente; una licencia por empresa, 1 a 1000 estaciones; solo lectura; instalador y SQL Server 2019; "los datos viven en tu servidor, no en la nube" | C34–C37, C39, C40, C44, C46 |
+| 06 Red local y licencia (`Architecture.tsx`) | Plano blueprint: servidor con SQL Server, estaciones, "renueva cada ≤ 7 días"; lista de 5 puntos (SQL Server en tu red, estaciones Windows, reglas en la base de datos, licencia por empresa, solo lectura); plano anterior: servidor con SQL Server y servicio de licencia, estaciones, "renueva por internet al menos cada 7 días", "no salen a internet"; Ed25519 verificada localmente; una licencia por empresa, 1 a 1000 estaciones; solo lectura; instalador y SQL Server 2019; "los datos viven en tu servidor, no en la nube" | C34–C37, C39, C40, C44, C46, C49 |
 | 07 Estamos empezando (`Starting.tsx`) | "Qué incluye hoy" (diez ítems); escenarios rotulados "de ejemplo"; "producto nuevo, sin distribuidoras que citar" (hecho declarado por Luis) | C01, C03, C06, C15, C16, C18, C19, C21, C22, C25, C27, C28, C30–C32 |
 | 08 Preguntas (`Faq.tsx`) | Las 12 respuestas del FAQ | C12–C14, C25, C26, C34–C38, C42–C44 y los NO ENCONTRADO que se dicen como límite |
 | 09 Contacto (`LeadForm.tsx`) | Formulario y vista previa del mensaje: no afirma nada del producto | — |

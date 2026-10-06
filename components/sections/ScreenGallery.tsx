@@ -41,10 +41,10 @@ export default function ScreenGallery({ screens }: { screens: ResolvedScreen[] }
             onClick={() => setSel(i)}
             className={cn(
               "shrink-0 whitespace-nowrap border-b-2 px-3 py-3 text-[15px] transition-colors duration-200 ease-nexo",
-              i === sel ? "border-white font-bold text-white" : "border-white/20 text-tint-200 hover:text-white",
+              i === sel ? "border-primary font-bold text-primary" : "border-line text-fg-medium hover:text-fg",
             )}
           >
-            <span className="font-mono text-[12px] text-tint-300">{String(i + 1).padStart(2, "0")}</span> {s.label}
+            <span className="folio">{String(i + 1).padStart(2, "0")}</span> {s.label}
           </button>
         ))}
       </div>
@@ -52,7 +52,7 @@ export default function ScreenGallery({ screens }: { screens: ResolvedScreen[] }
       <div id="cap-panel" role="tabpanel" aria-labelledby={`cap-tab-${cur.id}`} className="mt-6">
       <figure className="m-0">
         {/* Marco de ventana sobrio */}
-        <div className="overflow-hidden rounded border border-white/30 bg-white">
+        <div className="overflow-hidden rounded border border-line bg-white">
           <div className="flex h-7 items-center gap-1.5 border-b border-line bg-field px-3" aria-hidden>
             <i className="h-2 w-2 rounded-full bg-line" />
             <i className="h-2 w-2 rounded-full bg-line" />
@@ -81,9 +81,9 @@ export default function ScreenGallery({ screens }: { screens: ResolvedScreen[] }
             )}
           </div>
         </div>
-        <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 text-sm text-tint-100">
+        <figcaption className="mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 text-sm text-fg-medium">
           <span className="max-w-prose">{cur.caption}</span>
-          <span className="font-mono text-xs text-tint-300">Captura de la app con datos de demostración</span>
+          <span className="font-mono text-xs text-fg-muted">Captura de la app con datos de demostración</span>
         </figcaption>
       </figure>
       </div>

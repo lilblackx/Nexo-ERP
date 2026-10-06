@@ -11,7 +11,7 @@ La landing es 100% estática: no tiene backend, base de datos ni claves. La conv
 - Next.js 15 (App Router), React 19, TypeScript
 - Tailwind CSS 3 con tokens propios (paleta de la app)
 - Radix UI (acordeón) y Lucide (iconos)
-- Tipografía con `next/font`: Inter (titulares y texto) y JetBrains Mono (cifras y códigos). Los `AppFrame` usan la de la app (Segoe UI / system-ui)
+- Tipografía con `next/font`: Bricolage Grotesque (titulares), Instrument Sans (texto) e IBM Plex Mono (cifras y códigos). Los `AppFrame` usan la de la app (Segoe UI / system-ui)
 - Hosting: Cloudflare Pages (exportación estática)
 
 ## Desarrollo
