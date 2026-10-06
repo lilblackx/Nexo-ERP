@@ -133,6 +133,19 @@ export interface InvoiceDraft {
   change: Change & { note: string };
 }
 
+/** Extensión de los datos demo: Configuración > Licencia. */
+export interface License {
+  extension: true;
+  state: "ACTIVA" | "SIN_LICENCIA" | "VENCIDA" | "VALIDAR_EN_LINEA";
+  client: string;
+  plan: string;
+  expires: string;
+  role: "SERVIDOR" | "ESTACION";
+  stationsAllowed: number;
+  stations: { name: string; thisPc: boolean; lastUse: string; seat: boolean }[];
+  machineId: string;
+}
+
 export interface CreditNote {
   number: string;
   client: string;
@@ -269,7 +282,7 @@ export interface Purchases {
     supplier: string;
     date: string;
     expected: string;
-    products: number;
+    qty: number;
     received: number;
     total: number;
     status: "PENDIENTE" | "PARCIAL" | "COMPLETA" | "ANULADA";
@@ -333,6 +346,7 @@ export interface DemoData {
   products: Product[];
   invoices: Invoice[];
   invoiceDraft: InvoiceDraft;
+  license: License;
   creditNotes: CreditNote[];
   banks: { name: string; type: string; status: string }[];
   bankAccounts: BankAccount[];

@@ -416,14 +416,23 @@ const commissionPayments = src.pagos_comisiones.map((p) => ({
 
 /* --------------------------------- Compras --------------------------------- */
 
+/** Unidades pedidas y recibidas de cada orden, como las muestra la app (captura compras.png). */
+const ODC_UNITS = {
+  "ODC-000001": { qty: 140, received: 140 },
+  "ODC-000002": { qty: 90, received: 90 },
+  "ODC-000003": { qty: 140, received: 120 },
+  "ODC-000004": { qty: 30, received: 0 },
+  "ODC-000005": { qty: 20, received: 20 },
+};
+
 const purchases = {
   orders: src.compras.ordenes_de_compra.map((o) => ({
     number: o.numero_oc,
     supplier: clean(o.proveedor),
     date: o.fecha,
     expected: o.entrega_estimada,
-    products: o.total_productos,
-    received: o.cantidad_recibida,
+    qty: ODC_UNITS[o.numero_oc].qty,
+    received: ODC_UNITS[o.numero_oc].received,
     total: o.total,
     status: o.estado,
   })),
@@ -525,6 +534,23 @@ const creditNotes = src.notas_credito.map((n) => ({
   reason: n.motivo,
 }));
 
+/* Extensión: Configuración > Licencia (la captura de la app se omitió: mostraría el equipo real). */
+const license = {
+  extension: true,
+  state: "ACTIVA",
+  client: src.empresa.razon_social,
+  plan: "estandar",
+  expires: "2027-10-06",
+  role: "SERVIDOR",
+  stationsAllowed: 4,
+  stations: [
+    { name: "SERVIDOR", thisPc: true, lastUse: "2026-10-06 08:05", seat: true },
+    { name: "CAJA-01", thisPc: false, lastUse: "2026-10-06 08:12", seat: true },
+    { name: "OFICINA-01", thisPc: false, lastUse: "2026-10-05 17:40", seat: true },
+  ],
+  machineId: "3F9A1C0B7D2E4A58",
+};
+
 const out = {
   _generado: "scripts/generar-demo.mjs — datos ficticios; tasas de ejemplo; no editar a mano",
   company: { name: src.empresa.razon_social, initials: "DD", app: "Nexo ERP" },
@@ -539,6 +565,7 @@ const out = {
   products,
   invoices,
   invoiceDraft,
+  license,
   creditNotes,
   banks: src.bancos.map((b) => ({ name: b.nombre_banco, type: b.tipo_banco, status: b.estado_banco })),
   bankAccounts,

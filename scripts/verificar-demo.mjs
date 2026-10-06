@@ -154,6 +154,12 @@ const maria = d.commissions.filter((c) => c.seller === "María");
 eq(sum(maria.filter((c) => c.status === "pendiente").map((c) => c.commission)), 22.4, "María: por cobrar");
 eq(sum(maria.filter((c) => c.status === "liberada").map((c) => c.commission)), 15, "María: liberada");
 
+check(
+  d.purchases.orders.every((o) => o.received <= o.qty && (o.status !== "COMPLETA" || o.received === o.qty)),
+  "órdenes de compra: lo recibido no supera lo pedido y las completas están recibidas",
+);
+check(d.license.stations.length <= d.license.stationsAllowed, "licencia: estaciones registradas ≤ permitidas");
+
 /* ------------------------------- Cuentas por pagar ------------------------------- */
 eq(sum(d.payables.map((p) => p.balance)), d.dashboard.payable, "Por pagar del panel = suma de cuentas por pagar");
 for (const f of d.purchases.invoices) eq(round2(f.total - f.paid), f.balance, `${f.number}: saldo de compra`);

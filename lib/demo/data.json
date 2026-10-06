@@ -1285,6 +1285,36 @@
       "note": "Requiere referencia bancaria y autorización de un supervisor al facturar"
     }
   },
+  "license": {
+    "extension": true,
+    "state": "ACTIVA",
+    "client": "Distribuidora Demo, C.A.",
+    "plan": "estandar",
+    "expires": "2027-10-06",
+    "role": "SERVIDOR",
+    "stationsAllowed": 4,
+    "stations": [
+      {
+        "name": "SERVIDOR",
+        "thisPc": true,
+        "lastUse": "2026-10-06 08:05",
+        "seat": true
+      },
+      {
+        "name": "CAJA-01",
+        "thisPc": false,
+        "lastUse": "2026-10-06 08:12",
+        "seat": true
+      },
+      {
+        "name": "OFICINA-01",
+        "thisPc": false,
+        "lastUse": "2026-10-05 17:40",
+        "seat": true
+      }
+    ],
+    "machineId": "3F9A1C0B7D2E4A58"
+  },
   "creditNotes": [
     {
       "number": "NC-000001",
@@ -1969,7 +1999,7 @@
         "supplier": "Bebidas y Refrescos, C.A.",
         "date": "2026-08-20",
         "expected": "2026-08-27",
-        "products": 2,
+        "qty": 140,
         "received": 140,
         "total": 936,
         "status": "COMPLETA"
@@ -1979,7 +2009,7 @@
         "supplier": "Alimentos Mayoristas, C.A.",
         "date": "2026-09-10",
         "expected": "2026-09-17",
-        "products": 2,
+        "qty": 90,
         "received": 90,
         "total": 1470,
         "status": "COMPLETA"
@@ -1989,8 +2019,8 @@
         "supplier": "Bebidas y Refrescos, C.A.",
         "date": "2026-09-25",
         "expected": "2026-10-02",
-        "products": 2,
-        "received": 140,
+        "qty": 140,
+        "received": 120,
         "total": 1152,
         "status": "PARCIAL"
       },
@@ -1999,7 +2029,7 @@
         "supplier": "Alimentos Mayoristas, C.A.",
         "date": "2026-10-05",
         "expected": "2026-10-12",
-        "products": 1,
+        "qty": 30,
         "received": 0,
         "total": 594,
         "status": "PENDIENTE"
@@ -2009,7 +2039,7 @@
         "supplier": "Insumos de Limpieza, C.A.",
         "date": "2026-09-28",
         "expected": "2026-09-30",
-        "products": 1,
+        "qty": 20,
         "received": 20,
         "total": 396,
         "status": "COMPLETA"

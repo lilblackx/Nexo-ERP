@@ -1,0 +1,810 @@
+/*
+ * Réplica en DOM de la ventana de Nexo ERP. Todo bajo `.app-frame` y con los tokens de tokens.css.
+ * Ancho lógico fijo de 1280 px: AppFrame.tsx lo escala con transform. Usa la tipografía de la app
+ * (Segoe UI / system-ui), no la de la landing, y no depende de Tailwind.
+ */
+.app-frame {
+  position: relative;
+  box-sizing: border-box;
+  width: 1280px;
+  height: 752px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--af-content-bg);
+  color: var(--af-text);
+  font-family: var(--af-font);
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-align: left;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #94a3b8;
+}
+.app-frame *,
+.app-frame *::before,
+.app-frame *::after {
+  box-sizing: border-box;
+}
+.app-frame p,
+.app-frame div,
+.app-frame span {
+  margin: 0;
+  font-family: inherit;
+  letter-spacing: inherit;
+  text-wrap: nowrap;
+}
+.app-frame svg {
+  flex: none;
+}
+
+/* ---------- Barra de título nativa de Windows ---------- */
+.app-frame .af-title {
+  height: 32px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 12px;
+  color: #1e293b;
+  padding-left: 10px;
+}
+.app-frame .af-title-l {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-frame .af-wincontrols {
+  display: flex;
+  height: 100%;
+}
+.app-frame .af-wincontrols span {
+  width: 46px;
+  display: grid;
+  place-items: center;
+  color: #1e293b;
+}
+
+.app-frame .af-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  position: relative;
+}
+
+/* ---------- Barra lateral ---------- */
+.app-frame .af-sidebar {
+  width: var(--af-sidebar-w);
+  flex: none;
+  background: var(--af-primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.app-frame .af-sb-head {
+  height: var(--af-sidebar-head);
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.app-frame .af-sb-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+.app-frame .af-sb-name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.app-frame .af-sb-sub {
+  font-size: 11px;
+  color: var(--af-sidebar-section);
+  line-height: 1.3;
+}
+.app-frame .af-sb-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+.app-frame .af-sb-inner {
+  padding: 4px 8px 12px;
+}
+.app-frame .af-sb-section {
+  padding: 14px 12px 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--af-sidebar-section);
+}
+.app-frame .af-sb-item {
+  height: var(--af-sidebar-item);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--af-sidebar-text);
+}
+.app-frame .af-sb-item.is-active {
+  background: var(--af-primary-light);
+  color: #fff;
+  font-weight: 700;
+}
+.app-frame .af-sb-foot {
+  height: var(--af-sidebar-foot);
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--af-primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+.app-frame .af-sb-foot .af-sb-avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+}
+.app-frame .af-sb-foot svg {
+  margin-left: auto;
+}
+
+/* ---------- Zona principal ---------- */
+.app-frame .af-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.app-frame .af-banner {
+  flex: none;
+  background: #fef3c7;
+  border-bottom: 1px solid #fcd34d;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-frame .af-ticker {
+  height: var(--af-ticker-h);
+  flex: none;
+  background: #fff;
+  border-bottom: 1px solid var(--af-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-size: 12px;
+  color: var(--af-text-muted);
+}
+.app-frame .af-ticker-l {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.app-frame .af-ticker b {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--af-text);
+  margin-left: 4px;
+}
+.app-frame .af-ticker i {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--af-success);
+  margin-left: 4px;
+}
+.app-frame .af-ticker-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--af-border);
+}
+.app-frame .af-topbar {
+  height: var(--af-topbar-h);
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+.app-frame .af-crumb {
+  font-size: 13px;
+  color: var(--af-text-muted);
+}
+.app-frame .af-crumb b {
+  color: var(--af-text);
+  font-weight: 700;
+}
+.app-frame .af-topbar-r {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.app-frame .af-search {
+  width: 240px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-search);
+  background: #fff;
+  color: var(--af-text-light);
+  font-size: 13px;
+}
+.app-frame .af-bell {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: var(--af-text-medium);
+}
+.app-frame .af-bell em {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--af-danger);
+  color: #fff;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.app-frame .af-content {
+  flex: 1;
+  min-height: 0;
+  padding: 6px 20px 0 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- Encabezado de pantalla ---------- */
+.app-frame .af-page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.app-frame .af-page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--af-text);
+}
+.app-frame .af-page-sub {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--af-text-muted);
+}
+.app-frame .af-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  background: #e2e8f0;
+  color: var(--af-text-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.app-frame .af-chip.is-green {
+  background: var(--af-success-bg);
+  color: var(--af-success);
+}
+.app-frame .af-chip.is-amber {
+  background: #fef3c7;
+  color: #b45309;
+  font-weight: 700;
+}
+.app-frame .af-chip.is-green-strong {
+  font-weight: 700;
+  color: var(--af-success);
+}
+
+/* ---------- Tarjetas, barras de herramientas ---------- */
+.app-frame .af-card {
+  background: #fff;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-card);
+  box-shadow: var(--af-shadow);
+}
+.app-frame .af-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+.app-frame .af-spacer {
+  flex: 1;
+}
+.app-frame .af-input {
+  height: 36px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-field);
+  background: #fff;
+  color: var(--af-text-light);
+  font-size: 13px;
+}
+.app-frame .af-input.is-focus {
+  border: 1.5px solid var(--af-primary);
+}
+.app-frame .af-input.is-value {
+  color: var(--af-text);
+}
+.app-frame .af-input.is-right {
+  justify-content: flex-end;
+}
+.app-frame .af-select {
+  justify-content: space-between;
+}
+.app-frame .af-btn {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 16px;
+  border-radius: var(--af-r-button);
+  border: 1px solid var(--af-border);
+  background: #fff;
+  color: var(--af-text);
+  font-size: 13px;
+  font-weight: 400;
+}
+.app-frame .af-btn.is-primary {
+  background: var(--af-primary);
+  border-color: var(--af-primary);
+  color: #fff;
+  font-weight: 700;
+}
+.app-frame .af-btn.is-soft {
+  background: #eff6ff;
+  border-color: var(--af-blue-lighter);
+  color: var(--af-primary);
+  font-weight: 700;
+}
+.app-frame .af-btn.is-danger-soft {
+  height: 32px;
+  width: 56px;
+  justify-content: center;
+  padding: 0;
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: var(--af-danger);
+}
+.app-frame .af-btn.is-small {
+  height: 30px;
+  padding: 0 12px;
+}
+.app-frame .af-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-field);
+  background: #fff;
+  font-size: 13px;
+}
+.app-frame .af-check i {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--af-text-light);
+  border-radius: 4px;
+  background: #fff;
+}
+.app-frame .af-label-chip {
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-field);
+  background: #f8fafc;
+  font-size: 13px;
+  color: var(--af-text-slate);
+}
+
+/* ---------- Tablas ---------- */
+.app-frame .af-table {
+  background: #fff;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-table);
+  box-shadow: var(--af-shadow);
+  overflow: hidden;
+}
+.app-frame .af-tr {
+  display: grid;
+  grid-template-columns: var(--cols);
+  align-items: center;
+  height: var(--af-row-h);
+  border-bottom: 1px solid #e2e8f0;
+  color: var(--af-text-slate);
+}
+.app-frame .af-tr:nth-child(even) {
+  background: var(--af-table-alt);
+}
+.app-frame .af-tr.is-head {
+  height: 40px;
+  background: var(--af-table-header);
+  border-bottom: 2px solid var(--af-border);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--af-text-slate);
+}
+.app-frame .af-tr.is-head:nth-child(even) {
+  background: var(--af-table-header);
+}
+.app-frame .af-tr.is-selected {
+  background: #e2e8f0;
+}
+.app-frame .af-td {
+  padding: 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.app-frame .af-r {
+  text-align: right;
+}
+.app-frame .af-c {
+  text-align: center;
+}
+.app-frame .af-tr .af-r {
+  justify-self: stretch;
+}
+.app-frame .af-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--af-text-muted);
+}
+.app-frame .af-pager-l {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-frame .af-pager-btn {
+  width: 36px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--af-border);
+  border-radius: var(--af-r-field);
+  background: #fff;
+  color: var(--af-text-muted);
+}
+.app-frame .af-pager-r {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Insignias de estado ---------- */
+.app-frame .af-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--af-r-badge);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ---------- Pestañas ---------- */
+.app-frame .af-tabs {
+  display: flex;
+  gap: 22px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+}
+.app-frame .af-tab {
+  padding: 8px 4px 9px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--af-text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.app-frame .af-tab.is-active {
+  color: var(--af-primary);
+  border-bottom-color: var(--af-primary);
+}
+
+/* ---------- Tarjetas de indicadores (Panel) ---------- */
+.app-frame .af-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 14px;
+}
+.app-frame .af-kpi {
+  padding: 4px 18px 6px;
+  border-left: 1px solid var(--af-border);
+}
+.app-frame .af-kpi:first-child {
+  border-left: 0;
+  padding-left: 4px;
+}
+.app-frame .af-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--af-text-medium);
+}
+.app-frame .af-kpi-ico {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+}
+.app-frame .af-kpi-val {
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--af-text);
+  line-height: 1.15;
+}
+.app-frame .af-kpi-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.app-frame .af-grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+.app-frame .af-panel {
+  padding: 16px 18px;
+  overflow: hidden;
+}
+.app-frame .af-panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--af-text);
+}
+.app-frame .af-panel-sub {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--af-text-muted);
+}
+.app-frame .af-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+}
+.app-frame .af-link {
+  color: var(--af-primary);
+  font-weight: 700;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ---------- Diálogos ---------- */
+.app-frame .af-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+.app-frame .af-dialog {
+  position: relative;
+  background: #f8fafc;
+  border: 1px solid #94a3b8;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.35);
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+.app-frame .af-dlg-bar {
+  height: 30px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  padding-left: 10px;
+  font-size: 12px;
+}
+.app-frame .af-dlg-bar .af-wincontrols span {
+  width: 40px;
+}
+.app-frame .af-dlg-body {
+  padding: 18px 20px 16px;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.app-frame .af-dlg-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.app-frame .af-dlg-ico {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 8px;
+  border: 1px solid var(--af-blue-lighter);
+  background: #eff6ff;
+  color: var(--af-primary);
+  display: grid;
+  place-items: center;
+}
+.app-frame .af-dlg-title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.app-frame .af-dlg-sub {
+  font-size: 12px;
+  color: var(--af-text-muted);
+  margin-top: 2px;
+}
+.app-frame .af-rate-pill {
+  margin-left: auto;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #eef2f7;
+  font-size: 12px;
+  color: var(--af-text-medium);
+}
+.app-frame .af-dlg-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 20px 16px;
+}
+.app-frame .af-field {
+  margin-bottom: 12px;
+}
+.app-frame .af-field-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--af-text-slate);
+  margin-bottom: 5px;
+}
+.app-frame .af-field-label i {
+  font-style: normal;
+  color: var(--af-danger);
+}
+.app-frame .af-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--af-primary);
+  margin-bottom: 10px;
+}
+.app-frame .af-note {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--af-danger);
+  margin-top: 6px;
+}
+.app-frame .af-summary-ok {
+  font-size: 13px;
+  color: var(--af-success);
+  margin: 10px 0 14px;
+}
+.app-frame .af-summary-miss {
+  font-size: 13px;
+  color: var(--af-danger);
+  margin: 10px 0 14px;
+}
+.app-frame .af-change-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--af-primary);
+  margin-bottom: 6px;
+}
+.app-frame .af-msg {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--af-blue-lighter);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--af-text);
+}
+.app-frame .af-msg span {
+  text-wrap: wrap;
+}
+.app-frame .af-msg-ico {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 8px;
+  border: 1px solid var(--af-blue-lighter);
+  background: #eff6ff;
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Licencia ---------- */
+.app-frame .af-lic-state {
+  font-size: 22px;
+  font-weight: 700;
+}
+.app-frame .af-lic-line {
+  font-size: 13px;
+  color: var(--af-text-slate);
+  margin-top: 8px;
+}
+.app-frame .af-lic-list p {
+  font-size: 13px;
+  color: var(--af-text-slate);
+  margin-top: 4px;
+}
+
+/* ---------- Texto con salto permitido (para frases largas dentro de tarjetas) ---------- */
+.app-frame .af-wrap,
+.app-frame .af-wrap span {
+  text-wrap: wrap;
+  white-space: normal;
+}
+
+/* ---------- Efecto de enfoque dentro del escenario (scrollytelling) ---------- */
+.app-frame .af-pulse {
+  outline: 2px solid var(--af-primary);
+  outline-offset: 2px;
+}

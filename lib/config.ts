@@ -18,18 +18,23 @@ export const WA_DEMO = whatsappLink("Hola, quiero ver una demostración de Nexo 
 export const WA_SUPPORT = whatsappLink("Hola, tengo una consulta sobre Nexo ERP.");
 
 /** TODO(luis): definir el dominio final. Se usa para canonical, Open Graph, sitemap y robots. */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.CF_PAGES_URL ?? "http://localhost:3000";
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.CF_PAGES_URL ??
+  "http://localhost:3000"
+).replace(/\/+$/, "");
 
 /**
- * Las capturas reales van en /public/screens/ (ver public/screens/README.md).
- * Mientras sea false, la sección de capturas no se renderiza.
- * TODO(luis): poner en true cuando estén las 6 capturas limpias y en alta resolución.
+ * Las 6 capturas de la galería "La app, tal cual" van en /public/screens/ con estos nombres
+ * (ver public/screens/README.md). Mientras sea false se muestra un marcador neutro: nunca las antiguas.
+ * TODO(luis): reemplazar capturas. Copia las de reference/app/ (panel-general, facturacion, tasas-cambio,
+ * productos, comisiones, reportes) a public/screens/ y pon esto en true.
  */
 export const REAL_SCREENSHOTS_READY = false;
 
 export const NAV_LINKS = [
-  { href: "#dia", label: "Un día con Nexo" },
+  { href: "#sin-internet", label: "Sin internet" },
+  { href: "#dia", label: "Un día" },
   { href: "#cobro", label: "Cobro mixto" },
   { href: "#modulos", label: "Módulos" },
   { href: "#red", label: "Red local" },
