@@ -1,0 +1,58 @@
+/*
+ * Tokens de la app real, para los AppFrame. Salen de
+ * reference/brief/07-sistema-visual/design-tokens.json (app/ui/styles.py de la app).
+ * Quedan aislados bajo `.app-frame`: no se mezclan con los tokens de la landing.
+ */
+.app-frame {
+  --af-primary: #0d47a1;
+  --af-primary-dark: #0a3a83;
+  --af-primary-light: #1565c0;
+  --af-sidebar-hover: rgba(255, 255, 255, 0.14);
+  --af-sidebar-text: rgba(255, 255, 255, 0.88);
+  --af-sidebar-section: rgba(255, 255, 255, 0.7);
+  --af-topbar-border: #e2e8f0;
+  --af-content-bg: #f8fafc;
+  --af-card-bg: #ffffff;
+  --af-border: #cbd5e1;
+  --af-field-bg: #f1f5f9;
+  --af-table-header: #e2e8f0;
+  --af-table-alt: #f8fafc;
+  --af-table-hover: #eff6ff;
+  --af-text: #1e293b;
+  --af-text-slate: #334155;
+  --af-text-medium: #475569;
+  --af-text-muted: #64748b;
+  --af-text-light: #94a3b8;
+  --af-success: #16a34a;
+  --af-success-bg: #dcfce7;
+  --af-warning: #d97706;
+  --af-danger: #dc2626;
+  --af-danger-bg: #fee2e2;
+  --af-info: #0284c7;
+  --af-info-bg: #eff6ff;
+  --af-blue-light: #dbeafe;
+  --af-blue-lighter: #bfdbfe;
+
+  /* Radios */
+  --af-r-card: 10px;
+  --af-r-table: 8px;
+  --af-r-button: 6px;
+  --af-r-field: 6px;
+  --af-r-badge: 10px;
+  --af-r-search: 20px;
+
+  /* Sombra de tarjetas y tablas: desenfoque 18, desplazamiento 3, rgb(15,23,42) al 14 % */
+  --af-shadow: 0 3px 18px rgba(15, 23, 42, 0.14);
+
+  /* Tipografía de la app: sin webfonts adicionales */
+  --af-font: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+
+  /* Dimensiones */
+  --af-sidebar-w: 230px;
+  --af-sidebar-head: 64px;
+  --af-sidebar-foot: 56px;
+  --af-sidebar-item: 44px;
+  --af-topbar-h: 60px;
+  --af-ticker-h: 30px;
+  --af-row-h: 45px;
+}

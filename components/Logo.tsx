@@ -40,7 +40,7 @@ export default function Logo({
       )}
     >
       <LogoMark />
-      <span className="font-display text-[1.375rem] font-bold leading-none tracking-tight">
+      <span className="text-[1.375rem] font-extrabold leading-none tracking-[-0.03em]">
         Nexo
         <span
           className={cn(

@@ -14,8 +14,12 @@ const buttonVariants = cva(
         inverse: "bg-white text-primary hover:bg-tint-100",
         "outline-inverse": "border border-white/40 text-white hover:border-white hover:bg-white/10",
         whatsapp: "bg-success text-white hover:bg-success-text",
+        // Enlace de texto: secundario sin caja
+        link: "h-auto rounded-sm px-0 text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary",
+        "link-inverse": "h-auto rounded-sm px-0 text-white underline decoration-white/50 underline-offset-4 hover:decoration-white",
       },
       size: {
+        link: "text-[15px]",
         sm: "h-9 px-3.5 text-[13px]",
         md: "h-11 px-5 text-sm",
         lg: "h-12 px-6 text-[15px]",

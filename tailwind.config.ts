@@ -54,22 +54,28 @@ const config: Config = {
         danger: { DEFAULT: "#DC2626", bg: "#FEE2E2", text: "#B91C1C" },
         info: { DEFAULT: "#0284C7", bg: "#EFF6FF", text: "#0369A1" },
       },
+      // Inter (titulares y texto) y JetBrains Mono (cifras y códigos). `display` es un alias de `sans`.
       fontFamily: {
-        display: ["var(--font-display)", "Segoe UI", "Arial", "sans-serif"],
-        sans: ["var(--font-sans)", "Segoe UI", "Arial", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "Menlo", "Consolas", "monospace"],
+        display: ["var(--font-inter)", "Segoe UI", "Arial", "sans-serif"],
+        sans: ["var(--font-inter)", "Segoe UI", "Arial", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "ui-monospace", "Menlo", "Consolas", "monospace"],
       },
-      // Escala fluida
+      // Escala fluida: gran contraste entre titular, subtítulo y texto.
       fontSize: {
-        display: ["clamp(2.5rem, 1.6rem + 3.9vw, 4.75rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
-        h2: ["clamp(1.875rem, 1.35rem + 2.3vw, 3.5rem)", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
-        h3: ["clamp(1.25rem, 1.1rem + 0.65vw, 1.75rem)", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
+        display: [
+          "clamp(2.5rem, 1.35rem + 5vw, 5.25rem)",
+          { lineHeight: "1", letterSpacing: "-0.03em", fontWeight: "800" },
+        ],
+        h2: [
+          "clamp(1.875rem, 1.25rem + 2.6vw, 3.5rem)",
+          { lineHeight: "1.04", letterSpacing: "-0.028em", fontWeight: "800" },
+        ],
+        h3: [
+          "clamp(1.25rem, 1.1rem + 0.65vw, 1.75rem)",
+          { lineHeight: "1.12", letterSpacing: "-0.02em", fontWeight: "700" },
+        ],
         lead: ["clamp(1.0625rem, 1rem + 0.3vw, 1.3125rem)", { lineHeight: "1.5" }],
-      },
-      boxShadow: {
-        // Sombra dura desplazada (no difusa): da profundidad sin glow.
-        frame: "8px 8px 0 0 rgb(13 71 161 / 0.10)",
-        "frame-dark": "8px 8px 0 0 rgb(3 20 50 / 0.45)",
+        body: ["clamp(1rem, 0.97rem + 0.12vw, 1.0625rem)", { lineHeight: "1.6" }],
       },
       transitionTimingFunction: {
         nexo: "cubic-bezier(0.22, 0.8, 0.24, 1)",
