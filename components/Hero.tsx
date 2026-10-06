@@ -67,7 +67,7 @@ export default function Hero() {
           dialog="nueva-factura"
           tab="pagos"
           draft="hero"
-          mobileFocus={{ x: 372, y: 232, w: 470, h: 470 }}
+          mobileFocus={{ x: 272, y: 200, w: 500, h: 470 }}
           frameClassName="rounded-l border border-r-0 border-line"
           caption={`Factura ${demo.invoiceDraft.number} en “Formas de Pago”: Zelle en dólares y transferencia en bolívares, cubierta, con ${usd(demo.invoiceDraft.change.usd)} de vuelto.`}
           captionClassName="pr-4 sm:pr-6 lg:pr-8"

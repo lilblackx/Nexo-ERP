@@ -54,6 +54,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es-VE" className={`${sans.variable} ${mono.variable}`}>
       <body>
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+        >
+          Saltar al contenido
+        </a>
         {children}
         <script
           type="application/ld+json"

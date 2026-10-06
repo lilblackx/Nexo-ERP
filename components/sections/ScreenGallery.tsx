@@ -49,7 +49,8 @@ export default function ScreenGallery({ screens }: { screens: ResolvedScreen[] }
         ))}
       </div>
 
-      <figure id="cap-panel" role="tabpanel" aria-labelledby={`cap-tab-${cur.id}`} className="mt-6">
+      <div id="cap-panel" role="tabpanel" aria-labelledby={`cap-tab-${cur.id}`} className="mt-6">
+      <figure className="m-0">
         {/* Marco de ventana sobrio */}
         <div className="overflow-hidden rounded border border-white/30 bg-white">
           <div className="flex h-7 items-center gap-1.5 border-b border-line bg-field px-3" aria-hidden>
@@ -85,6 +86,7 @@ export default function ScreenGallery({ screens }: { screens: ResolvedScreen[] }
           <span className="font-mono text-xs text-tint-300">Captura de la app con datos de demostración</span>
         </figcaption>
       </figure>
+      </div>
     </div>
   );
 }

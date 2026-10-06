@@ -173,7 +173,7 @@ const BEATS: Beat[] = [
     ),
     spec: { screen: "facturacion", dialog: "nueva-factura", tab: "pagos", draft: "hero" },
     focus: { x: 240, y: 190, w: 800, h: 549 },
-    mobileFocus: { x: 262, y: 230, w: 470, h: 470 },
+    mobileFocus: { x: 272, y: 200, w: 500, h: 470 },
     caption: "Factura FV-000013 en “Formas de Pago”: Zelle y transferencia en bolívares, con vuelto.",
   },
   {

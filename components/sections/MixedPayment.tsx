@@ -92,13 +92,6 @@ export default function MixedPayment() {
     setChangeMethod("pago_movil");
   };
 
-  const status =
-    calc.missing > 0
-      ? `Falta ${usd(calc.missing)}: sin tolerancia, la factura no se emite.`
-      : calc.change > 0
-        ? `Cubierto. Vuelto a entregar: ${usd(calc.change)}.`
-        : "Cubierto, sin vuelto.";
-
   return (
     <section id="cobro" className="border-y border-line bg-white py-20 sm:py-28" aria-labelledby="cobro-titulo">
       <div className="container">
@@ -113,7 +106,7 @@ export default function MixedPayment() {
 
         <div className="mt-12 grid grid-cols-12 gap-x-2 gap-y-10 md:gap-x-6">
           {/* Tasas de ejemplo editables */}
-          <div className="col-span-12 lg:col-span-4">
+          <div className="order-2 col-span-12 lg:order-1 lg:col-span-4">
             <fieldset className="border-t border-line pt-4">
               <legend className="sr-only">Tasas de ejemplo</legend>
               <p className="folio">Tasas de ejemplo</p>
@@ -164,7 +157,7 @@ export default function MixedPayment() {
           </div>
 
           {/* Diálogo "Formas de Pago" */}
-          <div className="col-span-12 lg:col-span-8">
+          <div className="order-1 col-span-12 lg:order-2 lg:col-span-8">
             <div
               className="app-frame"
               style={{ width: "100%", height: "auto", display: "block", overflow: "visible", borderRadius: 4 }}
@@ -266,14 +259,14 @@ export default function MixedPayment() {
                   role="status"
                   aria-live="polite"
                   className={calc.missing > 0 ? "af-summary-miss af-wrap" : "af-summary-ok af-wrap"}
-                  style={{ fontSize: 14 }}
+                  // Controles reales: colores más oscuros que los de la app para cumplir contraste AA.
+                  style={{ fontSize: 14, color: calc.missing > 0 ? "#B91C1C" : "#15803D" }}
                 >
                   <span className="num">
                     Total factura: {usd(total)} · Pagado: {usd(calc.paid)}
                   </span>{" "}
                   · {calc.missing > 0 ? <b>Falta: {usd(calc.missing)}</b> : <b>Cubierto</b>}
                 </div>
-                <span className="sr-only">{status}</span>
 
                 {calc.change > 0 && (
                   <div>

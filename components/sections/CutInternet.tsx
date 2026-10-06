@@ -60,7 +60,7 @@ function GenericWebWindow({ rows, frozen }: { rows: number; frozen: boolean }) {
           <span className="num">{usd(subtotal)}</span>
         </p>
       </div>
-      <p className="border-t border-line bg-field px-4 py-2 text-[11px] text-fg-muted">
+      <p className="border-t border-line bg-field px-4 py-2 text-[11px] text-fg-medium">
         Ilustración de un sistema web genérico. No es ningún producto real.
       </p>
 
@@ -139,6 +139,16 @@ export default function CutInternet() {
           <p className="font-mono text-[13px] text-tint-200" aria-live="polite">
             Internet: {offline ? "cortado" : "conectado"}
           </p>
+          {/* Con movimiento reducido no hay avance automático: el renglón se agrega a mano. */}
+          {reduce && (
+            <button
+              type="button"
+              onClick={() => setRows((r) => (r >= SOURCE.lines.length ? 1 : r + 1))}
+              className="rounded border border-white/40 px-4 py-2.5 text-sm font-semibold text-white hover:border-white hover:bg-white/10"
+            >
+              Agregar un renglón a la factura de Nexo
+            </button>
+          )}
         </div>
 
         <div className="mt-8 grid grid-cols-12 gap-x-2 gap-y-8 md:gap-x-6">
@@ -154,7 +164,7 @@ export default function CutInternet() {
               tab="factura"
               draft={draft}
               focus={{ x: 246, y: 34, w: 790, h: 716 }}
-              mobileFocus={{ x: 262, y: 312, w: 500, h: 330 }}
+              mobileFocus={{ x: 545, y: 392, w: 480, h: 300 }}
               frameClassName="rounded border border-white/25"
               caption="Nueva factura con el internet cortado: se agregan renglones y cambia el total."
               captionClassName="!text-tint-200 [&_span:last-child]:!text-tint-300"
