@@ -54,21 +54,22 @@ const config: Config = {
         danger: { DEFAULT: "#DC2626", bg: "#FEE2E2", text: "#B91C1C" },
         info: { DEFAULT: "#0284C7", bg: "#EFF6FF", text: "#0369A1" },
       },
-      // Bricolage Grotesque (titulares), Instrument Sans (texto) e IBM Plex Mono (cifras y códigos).
+      // Segoe UI (la tipografía de la app en Windows) con Inter de respaldo; JetBrains Mono para cifras y códigos.
+      // `display` es un alias de `sans`.
       fontFamily: {
-        display: ["var(--font-display)", "Segoe UI", "Arial", "sans-serif"],
-        sans: ["var(--font-sans)", "Segoe UI", "Arial", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "Menlo", "Consolas", "monospace"],
+        display: ['"Segoe UI"', "var(--font-inter)", "Arial", "sans-serif"],
+        sans: ['"Segoe UI"', "var(--font-inter)", "Arial", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       // Escala fluida: gran contraste entre titular, subtítulo y texto.
       fontSize: {
         display: [
           "clamp(2.5rem, 1.35rem + 5vw, 5.25rem)",
-          { lineHeight: "1", letterSpacing: "-0.03em", fontWeight: "800" },
+          { lineHeight: "1", letterSpacing: "-0.03em", fontWeight: "700" },
         ],
         h2: [
           "clamp(1.875rem, 1.25rem + 2.6vw, 3.5rem)",
-          { lineHeight: "1.04", letterSpacing: "-0.028em", fontWeight: "800" },
+          { lineHeight: "1.04", letterSpacing: "-0.028em", fontWeight: "700" },
         ],
         h3: [
           "clamp(1.25rem, 1.1rem + 0.65vw, 1.75rem)",

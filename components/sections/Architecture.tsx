@@ -53,7 +53,7 @@ function BlueprintPlan() {
   const d = (n: number) => ({ "--d": `${n}ms` }) as CSSProperties;
   const slots = [...STATIONS, "OTRA ESTACIÓN"];
   const sx = (i: number) => 96 + i * 168; // centro de cada estación
-  const label = { fontFamily: "var(--font-mono), monospace", fontSize: 11, letterSpacing: 1 } as const;
+  const label = { fontFamily: "var(--font-jetbrains), monospace", fontSize: 11, letterSpacing: 1 } as const;
   return (
     <div
       ref={ref}

@@ -1,31 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_TITLE, siteDescription, softwareJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
 
 /*
- * Tipografía de la landing (la misma de la versión original del sitio):
- * - Bricolage Grotesque: titulares, con carácter y buen peso.
- * - Instrument Sans: texto, sobria y legible, con ñ y tildes bien resueltas.
- * - IBM Plex Mono: cifras tabulares de aspecto contable (montos, tasas, códigos).
- * `latin` + `latin-ext` cubren la ñ, las tildes y los signos del español. Autoalojadas con next/font.
- * Los AppFrame usan la tipografía de la app (Segoe UI / system-ui), sin webfonts adicionales.
+ * Tipografía de la landing, igual que la página original:
+ * - Texto y titulares: Segoe UI (la tipografía de la app en Windows); Inter, autoalojada con next/font,
+ *   solo es el respaldo en sistemas sin Segoe UI (Mac, Android, Linux). Ver `fontFamily` en tailwind.config.ts.
+ * - Cifras y códigos: JetBrains Mono.
+ * `latin` + `latin-ext` cubren la ñ, las tildes y los signos del español.
  */
-const display = Bricolage_Grotesque({
+const sans = Inter({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-display",
+  variable: "--font-inter",
   display: "swap",
 });
-const sans = Instrument_Sans({
+const mono = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-sans",
-  display: "swap",
-});
-const mono = IBM_Plex_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -59,7 +52,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-VE" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="es-VE" className={`${sans.variable} ${mono.variable}`}>
       <body>
         <a
           href="#contenido"
