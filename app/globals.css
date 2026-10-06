@@ -15,12 +15,12 @@
     font-feature-settings: "kern", "liga", "calt";
   }
 
-  /* Titulares: Segoe UI (Inter de respaldo) en 700, tracking apretado, interlineado de 1.0 a 1.1. */
+  /* Titulares: Bricolage Grotesque semibold, tracking apretado, interlineado de 1.0 a 1.1. */
   h1,
   h2,
   h3,
   h4 {
-    @apply font-display text-fg;
+    @apply font-display font-semibold text-fg;
     text-wrap: balance;
   }
   h1 {
@@ -54,7 +54,7 @@
 }
 
 @layer utilities {
-  /* Cifras: JetBrains Mono con números tabulares (montos, tasas, códigos de factura, porcentajes). */
+  /* Cifras: IBM Plex Mono con números tabulares (montos, tasas, códigos de factura, porcentajes). */
   .num {
     @apply font-mono font-medium tabular-nums;
     letter-spacing: -0.02em;
