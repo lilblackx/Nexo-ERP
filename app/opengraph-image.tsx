@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
+import { demo, num, RATES_LABEL } from "@/lib/demo";
 
 export const dynamic = "force-static";
-export const alt = "Nexo ERP: cobra en dólares y bolívares sin sacar la calculadora";
+export const alt = "Nexo ERP: cobra en dólares y bolívares en una sola factura";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,7 +30,7 @@ export default function OpengraphImage() {
             color: "#DBE7F7",
           }}
         >
-          Tasa BCV Bs. 871.36 · Dólar paralelo Bs. 970.00 · valores de ejemplo
+          {`Tasa BCV Bs. ${num(demo.rates.bcv)} · Dólar paralelo Bs. ${num(demo.rates.paralelo)} · ${RATES_LABEL}`}
         </div>
         <div style={{ display: "flex", flexDirection: "column", flex: 1, padding: "56px 64px 48px" }}>
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -55,7 +56,7 @@ export default function OpengraphImage() {
               maxWidth: 1040,
             }}
           >
-            Cobra en dólares y bolívares sin sacar la calculadora.
+            Cobra en dólares y bolívares en una sola factura.
           </div>
           <div style={{ display: "flex", flex: 1 }} />
           <div

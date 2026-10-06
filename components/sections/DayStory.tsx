@@ -50,6 +50,7 @@ const maria = demo.commissions.filter((c) => c.seller === "María");
 const seller = maria[0].seller;
 const montoLiberado = maria.filter((c) => c.status === "liberada").reduce((s, c) => s + c.commission, 0);
 const low = demo.products.filter((p) => p.lowStock).length;
+const expiring = demo.dashboard.stockAlerts.filter((a) => a.expires).length;
 const nc = demo.creditNotes[0];
 const cajaAbierta = demo.cashRegisters.find((c) => c.status === "ABIERTA")!;
 
@@ -142,8 +143,8 @@ const BEATS: Beat[] = [
         </p>
         {features.alertasStockVencimiento && (
           <p>
-            La píldora amarilla del catálogo cuenta los productos con stock bajo o por vencer: hoy son {low} y el icono
-            ámbar marca cuáles.
+            La píldora amarilla del catálogo cuenta los productos con stock bajo o por vencer (en el ejemplo, {low} y{" "}
+            {expiring}) y un icono ámbar marca cuáles.
           </p>
         )}
       </>
@@ -213,7 +214,7 @@ const BEATS: Beat[] = [
       <>
         <p>
           Las cuentas por cobrar se agrupan por cliente. {norte.client} debe {usd(norte.balance)} en {norte.invoices.length}{" "}
-          facturas, y te llega con un abono general.
+          facturas, y puedes cobrarlas con un abono general.
         </p>
         <p>El abono se aplica de la factura más antigua a la más nueva.</p>
       </>

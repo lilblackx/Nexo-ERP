@@ -6,20 +6,36 @@ export const SITE_TITLE = "Nexo ERP: sistema de gestión para distribuidoras en 
 
 /** La descripción solo menciona funciones confirmadas (respeta `features`). */
 export function siteDescription() {
-  const pagos = [
-    features.pagoMixto && "facturación con pago mixto",
-    features.pagoMovilComoCobro && "pago móvil",
-  ].filter(Boolean);
   const parts = [
-    "Sistema de gestión de escritorio para distribuidoras y mayoristas.",
-    pagos.length ? `Incluye ${pagos.join(" y ")},` : "Incluye",
-    "inventario por cajas, cuentas por cobrar y por pagar, comisiones y tasas BCV y paralelo.",
-    "Funciona sobre SQL Server en tu red local.",
-  ];
-  return parts.join(" ").replace(/\s+/g, " ");
+    "Sistema de gestión de escritorio para distribuidoras y mayoristas en Venezuela:",
+    features.pagoMixto && features.monedasCobro
+      ? "cobro mixto en dólares, bolívares, pesos y USDT"
+      : features.pagoMixto && "cobro mixto",
+    features.vuelto && "con vuelto,",
+    features.cajasYUnidades && "inventario por cajas y unidades sueltas,",
+    features.cuentasPorCobrarFifo && "cuentas por cobrar,",
+    features.comisiones && "comisiones de vendedor.",
+    "Para Windows, con SQL Server en tu red local.",
+  ].filter(Boolean);
+  return parts.join(" ").replace(/\s+/g, " ").replace(/ ,/g, ",");
 }
 
-/** JSON-LD SoftwareApplication. Sin ratings ni precios: no hay datos reales. */
+/** Funciones que se listan en el JSON-LD; solo las confirmadas. */
+function featureList() {
+  return [
+    features.pagoMixto && "Cobro mixto con varios métodos y monedas en una factura",
+    features.vuelto && "Vuelto registrado en caja o banco",
+    features.cajasYUnidades && "Inventario por cajas y unidades sueltas",
+    features.tresPrecios && "Tres niveles de precio por producto",
+    features.cuentasPorCobrarFifo && "Cuentas por cobrar con abono general y antigüedad de saldos",
+    features.compras && "Compras con órdenes, recepciones y facturas",
+    features.comisiones && "Comisiones de vendedor",
+    features.roles && "Roles y permisos con autorización de supervisor",
+    features.auditoria && "Bitácora de auditoría por usuario",
+  ].filter(Boolean);
+}
+
+/** JSON-LD SoftwareApplication. Sin ratings, precios ni versión: no hay datos reales. */
 export function softwareJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -28,6 +44,7 @@ export function softwareJsonLd() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Windows",
     description: siteDescription(),
+    featureList: featureList(),
     inLanguage: "es-VE",
     url: SITE_URL,
   };

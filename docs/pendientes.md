@@ -1,27 +1,36 @@
 # Pendientes antes de publicar
 
-## Flags en `lib/features.ts` (confirmar para activar)
-- `usdt`: hoy `false`. Con `true` se habilita la fila de USDT como método de pago en los mockups.
-- `logistica`: hoy `false`. Rutas, mapa y despacho no aparecen en ningún sitio.
-- `ed25519`: hoy `false`. Con `true` aparecen la terminal de licencia y el texto de verificación.
+Buscar `TODO(luis)` en el código. Este es el resumen.
 
-## Afirmaciones por confirmar (buscar `TODO(luis)` en el código)
-- Flujo real del pago móvil: si hay referencia, verificación bancaria, o registro manual. El FAQ solo dice que se registra como método de pago.
-- Pantalla de cobro con pago mixto: el diseño del diálogo es ilustrativo (no hay captura). Reemplazar con la pantalla real.
-- Si el cobro aplica la tasa del día a la parte en bolívares (capítulo 4 de "Un día con Nexo").
-- COP: hoy solo es tasa de referencia, no método de cobro.
-- Qué incluye "Cuentas por Cobrar BCV".
-- Alcance real de la implementación: instalación, capacitación, migración desde Excel u otro sistema, soporte.
-- Respuestas del FAQ: respaldos y restauración, capacidad (cuántas cajas y usuarios), impresoras y soporte fiscal, licencia (modelo, precio, renovación).
-- Soporte fiscal (SENIAT, máquina fiscal): hoy no se menciona. Es una pregunta probable de un dueño de distribuidora.
-- Si hay soporte para sucursales: hoy no se dibuja ninguna en el plano de la LAN.
-- Qué eventos registra Auditoría y qué otros reportes existen.
-- Aviso de privacidad: texto genérico, que lo revise quien corresponda.
-- Dominio final: definir `NEXT_PUBLIC_SITE_URL` (canonical, Open Graph, sitemap, robots).
+## Flags en `lib/features.ts`
+- `porcentajeBcv: false`: el "porcentaje BCV" (un porcentaje de incremento sobre los precios, no la tasa del BCV) y Cuentas
+  por Cobrar BCV solo aparecen en el menú del mockup, sin copy ni datos. Activarlo exige confirmar su significado comercial.
+- `comisionPorDiferenciaPrecio: true`: confirmar la regla de negocio (el cartel de comisión de la factura y el servicio
+  no coinciden con Precio 2 y 3).
+- Los flags en `false` de "No existe" (Binance Pay, logística, tasas automáticas, respaldos, importación de Excel,
+  impresión térmica, multi-sucursal, IGTF, conciliación, cotizaciones, versión visible) no se activan sin que exista la función.
+
+## Textos por confirmar
+- Plazo de 7 días de la renovación de la licencia (franja "sin internet", plano de red, FAQ).
+- Cobro en bolívares: verificar el flujo en la app real antes de publicar (el juego de cobro mixto lo simula).
+- Carácter fiscal de la factura (FAQ y módulo Facturación).
+- Qué se ofrece en "Cómo sería empezar": instalación, capacitación, carga de datos y soporte.
+- FAQ: respaldo, migración desde Excel, capacidad (cajas y estaciones), ediciones de SQL Server y lista "Qué NO hace todavía".
+- Límite "solo ADMIN abre y cierra turnos" (módulo Cajas y bancos): decidir si se publica.
+- Rubros del formulario de contacto.
+- Mensajes de licencia por estado (el de "Validación pendiente" se redactó con la causa del brief).
+- Formato numérico definitivo dentro de los mockups (coma de miles, punto decimal).
+
+## App (antes de recapturar)
+- Renombrar la app a "Nexo ERP" (hoy el título de ventana y el instalador usan otro nombre).
+- Corregir textos: "RF Empresa" → "RIF Empresa", "Iniciar Sesion" → "Iniciar Sesión", "Password" → "Contraseña",
+  "esta en modo solo lectura" → "está en modo solo lectura", columna "AGRANEL" → "A granel" / "Sueltas".
+- Capturas: `public/screens/` hoy tiene las del 2026-10-06; `tasas-cambio.png` falta (hay `tasa-cambio-brusco.png`).
 
 ## Assets que debes aportar
-- Capturas reales limpias para `public/screens/` (ver `public/screens/README.md`): `panel-general.png`, `facturacion.png`, `tasas-cambio.png`, `productos.png`, `comisiones.png`, `reportes.png`. 1600x850, sin marca de agua "sesión no comercial", con datos de prueba y sin nombres, correos, teléfonos ni RIF reales. Luego poner `REAL_SCREENSHOTS_READY = true` en `lib/config.ts`.
-- Captura de la pantalla real de cobro con pago mixto y vuelto.
+- Capturas definitivas (ver `public/screens/README.md`) y, si quieres, la captura de Configuración > Licencia con "3 de 4".
+- Dominio final: `NEXT_PUBLIC_SITE_URL` (canonical, Open Graph, sitemap, robots).
 
 ## Seguridad de datos
-- `reference/` y los `.docx` están en `.gitignore`. No los subas a un repositorio ni a un hosting.
+- `reference/` está en `.gitignore` y nunca entró al historial. No lo subas a un repositorio ni a un hosting.
+- El historial de git de la app real contiene una credencial de correo (ver `reference/brief/10-vacios-y-riesgos.md`): revocarla.

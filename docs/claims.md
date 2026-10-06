@@ -53,7 +53,11 @@ Estados: IMPLEMENTADO · PARCIAL (se redacta con el matiz de la columna "Redacci
 | C41 | Factura atómica: se registra completa o no se registra | — | PARCIAL (sin "100 %") | — | 08-cruce-con-la-landing.md §7 |
 | C42 | Impresión en PDF y en hoja carta por cualquier impresora de Windows | impresionTermica | IMPLEMENTADO (carta) | — | 03-flujos-transversales/impresion.md |
 | C43 | Documento digital propio con número de control interno e IVA configurable | facturaFiscal | PARCIAL | — | 10-vacios-y-riesgos.md §D |
-| C44 | SQL Server 2019 es el caso de producción documentado | instalador | PARCIAL | — | 08-cruce-con-la-landing.md §8 |
+| C44 | SQL Server 2019 es el caso de producción documentado; Express se usa para pruebas | instalador | PARCIAL | — | 08-cruce-con-la-landing.md §8 |
+| C45 | La mercancía entra al stock al registrar la recepción | — | IMPLEMENTADO | compras | 02-modulos/compras.md |
+| C46 | Las estaciones solo hablan con el SQL Server de la red; solo el servidor se conecta a internet (renovación de la licencia) | licenciaPorEstaciones | IMPLEMENTADO | licenciaFirmada | 04-licenciamiento-y-sin-internet.md §2 |
+| C47 | Un cliente o vendedor inactivo no puede facturar; nada se borra | — | IMPLEMENTADO | — | 02-modulos/clientes.md, vendedores.md |
+| C48 | Cuentas por cobrar: no hay recordatorios, intereses de mora ni cobro en línea (se dice solo como límite) | — | NO ENCONTRADO (límite) | — | 02-modulos/cuentas-por-cobrar.md |
 
 ## Nunca se afirma (NO ENCONTRADO)
 
@@ -76,6 +80,26 @@ recordatorios de cobro · intereses de mora · cobro en línea · comisión por 
 | Plazo de 7 días de la renovación de licencia | — | TODO(luis): confirmar la redacción. |
 | Capacidad (cuántas cajas y estaciones) | — | Sin cifras probadas. TODO(luis). |
 
-## Filas por sección del sitio
+## Frases del sitio → fila
 
-La columna "Dónde" se completa en la Fase 4 al verificar el copy final contra esta tabla.
+Cada frase que afirma algo sobre el producto, por sección. Las cifras de los mockups salen de `lib/demo/` (datos ficticios, tasas de ejemplo).
+
+| Sección (componente) | Frases | Filas |
+|---|---|---|
+| Header y franja de tasas | "valores de ejemplo", tasas, variación y "Actualizado hace 12 min" (hora del último registro manual) | C12, C14 |
+| Hero (`Hero.tsx`) | "Cobra en dólares y bolívares en una sola factura"; "sistema de gestión de escritorio para distribuidoras y mayoristas"; "cobras en dólares, bolívares, pesos y USDT con la tasa del día"; "entregas el vuelto"; "llevas la caja, el inventario y las cuentas por cobrar en tu red local"; pie: "De escritorio, para Windows", "SQL Server en tu red", "Por empresa, firmada con Ed25519" | C01, C03, C06, C18, C21, C28, C34, C35, C37, C39, C40 |
+| 01 Red local (`CutInternet.tsx`) | "Si se cae el internet, se sigue facturando"; "opera en tu red local, sin depender de internet para el día a día"; "la tasa del día se registra a mano y la licencia se renueva por internet al menos una vez por semana" | C12, C37 |
+| 02 Un día (`DayStory.tsx`) | Capítulo 1: sin caja abierta no se factura, apertura con saldo, corte impreso; tasa a mano con histórico y brecha; cada factura guarda la tasa; aviso de cambio brusco (> 30 %) y de tasa sin registrar. Capítulo 2: orden parcial, stock entra al recibir, devolución por motivo. Capítulo 3: cajas y sueltas, tres precios por línea, alertas de stock bajo y por vencer. Capítulo 4: pago mixto Zelle + transferencia VES, vuelto, Pago Móvil con referencia y supervisor, una sola transacción; descuento autorizado sin cerrar sesión; anulación con nota de crédito. Capítulo 5: cuentas por cobrar por cliente, abono general de la más antigua a la más nueva; antigüedad de saldos. Capítulo 6: comisión por diferencia de precio, Liberada/Pendiente, pago en lote, "Mis Comisiones". Capítulo 7: Panel General, corte, auditoría | C01–C03, C06, C07, C10–C14, C17–C21, C23–C29, C32, C41, C45 |
+| 03 Cobro mixto (`MixedPayment.tsx`) | Varias formas de pago y monedas; conversión VES ÷ BCV, COP ÷ tasa COP, USDT 1 a 1; sin tolerancia, exceso es vuelto; métodos y que son registros manuales sin integración; brecha informativa; la factura queda en dólares | C01–C07, C09, C12, C14 |
+| 04 Módulos (`Modules.tsx`) | Once módulos y sus límites (ver C01–C33, C42, C43, C47, C48) | C01–C33, C42, C43, C47, C48 |
+| 05 La app, tal cual (`RealScreens.tsx`) | Pies de captura (qué muestra cada una) | C01, C06, C12, C18–C20, C23, C25, C29 |
+| 06 Red local y licencia (`Architecture.tsx`) | Plano: servidor con SQL Server y servicio de licencia, estaciones, "renueva por internet al menos cada 7 días", "no salen a internet"; Ed25519 verificada localmente; una licencia por empresa, 1 a 1000 estaciones; solo lectura; instalador y SQL Server 2019; "los datos viven en tu servidor, no en la nube" | C34–C37, C39, C40, C44, C46 |
+| 07 Estamos empezando (`Starting.tsx`) | "Qué incluye hoy" (diez ítems); escenarios rotulados "de ejemplo"; "producto nuevo, sin distribuidoras que citar" (hecho declarado por Luis) | C01, C03, C06, C15, C16, C18, C19, C21, C22, C25, C27, C28, C30–C32 |
+| 08 Preguntas (`Faq.tsx`) | Las 12 respuestas del FAQ | C12–C14, C25, C26, C34–C38, C42–C44 y los NO ENCONTRADO que se dicen como límite |
+| 09 Contacto (`LeadForm.tsx`) | Formulario y vista previa del mensaje: no afirma nada del producto | — |
+| Footer | "sistema de gestión de escritorio para distribuidoras y mayoristas", "Para Windows, con SQL Server en tu red local" | C39, C40 |
+| Metadata, JSON-LD y OG (`lib/seo.ts`, `app/opengraph-image.tsx`) | Descripción y `featureList` generadas desde `lib/features.ts`; sin ratings ni versión | C01, C03, C06, C18, C21, C25, C31, C32, C39, C40 |
+
+## Preguntas abiertas (TODO en el código)
+
+Buscar `TODO(luis)` en el repositorio. Resumen en `docs/pendientes.md`.
