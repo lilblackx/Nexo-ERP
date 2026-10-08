@@ -48,7 +48,7 @@ export default function LeadForm() {
 
   return (
     <section id="contacto" className="on-blue bg-primary-deep text-white">
-      <div className="container py-20 sm:py-28">
+      <div className="container py-16 sm:py-24">
         <SectionHead onBlue n="09" label="Contacto" title="Cuéntanos cómo trabajas y arma tu mensaje.">
           Responde lo que sepas. Verás el mensaje tal como llegará por WhatsApp antes de enviarlo.
         </SectionHead>

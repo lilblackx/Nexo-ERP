@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import InView from "@/components/InView";
 import SectionHead from "@/components/SectionHead";
 import { features } from "@/lib/features";
 
@@ -68,7 +69,7 @@ const FAQ: { q: string; a: string }[] = [
 
 export default function Faq() {
   return (
-    <section id="preguntas" className="border-t border-line bg-white py-20 sm:py-28" aria-labelledby="preguntas-titulo">
+    <section id="preguntas" className="border-t border-line bg-white py-16 sm:py-24" aria-labelledby="preguntas-titulo">
       <div className="container">
         <SectionHead
           n="08"
@@ -81,10 +82,12 @@ export default function Faq() {
           <div className="col-span-12 lg:col-span-9 lg:col-start-4">
             <Accordion type="single" collapsible className="border-t border-line">
               {FAQ.map((f, i) => (
-                <AccordionItem key={f.q} value={`f${i}`}>
-                  <AccordionTrigger>{f.q}</AccordionTrigger>
-                  <AccordionContent>{f.a}</AccordionContent>
-                </AccordionItem>
+                <InView key={f.q} y={24} margin="0px 0px -60px 0px" delayMs={Math.min(i, 6) * 60}>
+                  <AccordionItem value={`f${i}`}>
+                    <AccordionTrigger>{f.q}</AccordionTrigger>
+                    <AccordionContent>{f.a}</AccordionContent>
+                  </AccordionItem>
+                </InView>
               ))}
             </Accordion>
           </div>

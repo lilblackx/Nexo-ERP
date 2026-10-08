@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ChevronDown } from "lucide-react";
 import AppFrame, { type Crop, type FrameSpec } from "@/components/appframe/AppFrame";
+import InView from "@/components/InView";
 import LazyMount from "@/components/LazyMount";
 import SectionHead from "@/components/SectionHead";
 import { demo, num0, rates, usd } from "@/lib/demo";
@@ -302,16 +304,36 @@ const BEATS: Beat[] = [
   },
 ];
 
+const mobileFrame = (b: Beat) => (
+  <AppFrame
+    {...b.spec}
+    focus={b.mobileFocus}
+    mobileFocus={b.mobileFocus}
+    frameClassName="rounded border border-line"
+    caption={b.caption}
+  />
+);
+
 export default function DayStory() {
-  const [active, setActive] = useState(0);
+  // `prev` cambia junto con `active` en la misma actualización: la capa saliente nunca se desmonta y remonta
+  // (eso la dejaba un instante en blanco antes de desvanecerse).
+  const [{ active, prev }, setStage] = useState<{ active: number; prev: number | null }>({ active: 0, prev: null });
   const refs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    if (prev === null) return;
+    const t = setTimeout(() => setStage((s) => (s.prev === prev ? { ...s, prev: null } : s)), 220);
+    return () => clearTimeout(t);
+  }, [prev]);
 
   useEffect(() => {
     const els = refs.current.filter(Boolean) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
-          if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset.beat));
+          if (!e.isIntersecting) continue;
+          const next = Number((e.target as HTMLElement).dataset.beat);
+          setStage((s) => (s.active === next ? s : { active: next, prev: s.active }));
         }
       },
       { rootMargin: "-40% 0px -50% 0px" },
@@ -324,7 +346,7 @@ export default function DayStory() {
   const firstOfChapter = (i: number) => i === 0 || BEATS[i - 1].chapter !== BEATS[i].chapter;
 
   return (
-    <section id="dia" className="py-20 sm:py-28" aria-labelledby="dia-titulo">
+    <section id="dia" className="py-16 sm:py-24" aria-labelledby="dia-titulo">
       <div className="container">
         <SectionHead
           n="02"
@@ -346,28 +368,53 @@ export default function DayStory() {
                 }}
                 data-beat={i}
                 className={cn(
-                  "flex flex-col justify-center border-t border-line py-10 lg:min-h-[55vh]",
+                  "flex flex-col justify-center border-t border-line lg:min-h-[55vh]",
+                  firstOfChapter(i) ? "py-10" : "py-5 lg:py-10",
                   b.big && "lg:min-h-[78vh]",
                 )}
               >
-                {firstOfChapter(i) && (
-                  <p className="folio mb-3">
-                    Capítulo {b.chapter} de {CHAPTERS.length} · {CHAPTERS[b.chapter - 1]}
-                  </p>
-                )}
-                <h3 className={cn(b.big ? "text-[clamp(1.6rem,1.2rem+1.4vw,2.25rem)]" : "text-h3")}>{b.heading}</h3>
-                <div className="mt-4 max-w-[46ch] space-y-3 text-body text-fg-medium">{b.body}</div>
+                {firstOfChapter(i) ? (
+                  <>
+                    <InView>
+                      <p className="folio mb-3">
+                        Capítulo {b.chapter} de {CHAPTERS.length} · {CHAPTERS[b.chapter - 1]}
+                      </p>
+                      <h3 className={cn(b.big ? "text-[clamp(1.6rem,1.2rem+1.4vw,2.25rem)]" : "text-h3")}>
+                        {b.heading}
+                      </h3>
+                      <div className="mt-4 max-w-[46ch] space-y-3 text-body text-fg-medium">{b.body}</div>
+                    </InView>
 
-                {/* Móvil: recorte en línea, sin sticky */}
-                <LazyMount className="mt-6 lg:hidden" minHeight={260}>
-                  <AppFrame
-                    {...b.spec}
-                    focus={b.mobileFocus}
-                    mobileFocus={b.mobileFocus}
-                    frameClassName="rounded border border-line"
-                    caption={b.caption}
-                  />
-                </LazyMount>
+                    {/* Móvil: recorte en línea, sin sticky */}
+                    <InView className="mt-6 lg:hidden" y={40} delayMs={100}>
+                      <LazyMount minHeight={260}>{mobileFrame(b)}</LazyMount>
+                    </InView>
+                  </>
+                ) : (
+                  <>
+                    {/* Móvil: los pasos secundarios de un capítulo van plegados (el primero ya muestra la ventana). */}
+                    <details className="group lg:hidden">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
+                        <h3 className="text-h3">{b.heading}</h3>
+                        <ChevronDown
+                          aria-hidden
+                          className="h-5 w-5 shrink-0 text-fg-muted transition-transform duration-200 group-open:rotate-180"
+                        />
+                      </summary>
+                      <div className="mt-4 space-y-3 text-body text-fg-medium">{b.body}</div>
+                      <LazyMount className="mt-6" minHeight={260}>
+                        {mobileFrame(b)}
+                      </LazyMount>
+                    </details>
+
+                    <InView className="hidden lg:block">
+                      <h3 className={cn(b.big ? "text-[clamp(1.6rem,1.2rem+1.4vw,2.25rem)]" : "text-h3")}>
+                        {b.heading}
+                      </h3>
+                      <div className="mt-4 max-w-[46ch] space-y-3 text-body text-fg-medium">{b.body}</div>
+                    </InView>
+                  </>
+                )}
               </li>
             ))}
           </ol>
@@ -388,13 +435,25 @@ export default function DayStory() {
                   ))}
                 </span>
               </div>
-              <div key={active} className="animate-fade">
-                <AppFrame
-                  {...beat.spec}
-                  focus={beat.focus}
-                  frameClassName="rounded border border-line"
-                  caption={beat.caption}
-                />
+              <div className="relative">
+                {/* Capítulo anterior: se desvanece con blur por debajo mientras entra el nuevo. Cada capa
+                    conserva su key, así la que sale es el mismo nodo que estaba a la vista. */}
+                {(prev === null ? [active] : [prev, active]).map((i) => (
+                  <div
+                    key={i}
+                    className={cn(
+                      i === active ? "animate-swap-in" : "pointer-events-none absolute inset-0 animate-swap-out",
+                    )}
+                    aria-hidden={i === active ? undefined : true}
+                  >
+                    <AppFrame
+                      {...BEATS[i].spec}
+                      focus={BEATS[i].focus}
+                      frameClassName="rounded border border-line"
+                      caption={BEATS[i].caption}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

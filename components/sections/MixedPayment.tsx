@@ -93,7 +93,7 @@ export default function MixedPayment() {
   };
 
   return (
-    <section id="cobro" className="border-y border-line bg-white py-20 sm:py-28" aria-labelledby="cobro-titulo">
+    <section id="cobro" className="border-y border-line bg-white py-16 sm:py-24" aria-labelledby="cobro-titulo">
       <div className="container">
         <SectionHead
           n="03"

@@ -9,7 +9,7 @@ import ScreenGallery from "./ScreenGallery";
 export default function RealScreens() {
   const screens = resolveScreens();
   return (
-    <section id="capturas" className="border-y border-line bg-white py-20 sm:py-28" aria-labelledby="capturas-titulo">
+    <section id="capturas" className="border-y border-line bg-white py-16 sm:py-24" aria-labelledby="capturas-titulo">
       <div className="container">
         <SectionHead
           n="05"

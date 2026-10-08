@@ -1,3 +1,4 @@
+import InView from "@/components/InView";
 import { Button } from "@/components/ui/button";
 import SectionHead from "@/components/SectionHead";
 import { WA_DEMO } from "@/lib/config";
@@ -7,6 +8,8 @@ import { features } from "@/lib/features";
  * "Estamos empezando": sin prueba social falsa. Qué incluye hoy (solo lo verificado), cómo sería una
  * implementación acompañada y una invitación honesta. Los escenarios son de ejemplo, nunca clientes.
  */
+
+const MARGIN = "0px 0px -60px 0px";
 
 const TODAY = [
   features.pagoMixto && "Cobro mixto en dólares, bolívares, pesos y USDT, con vuelto",
@@ -34,7 +37,7 @@ const SCENARIOS = [
 
 export default function Starting() {
   return (
-    <section id="empezando" className="py-20 sm:py-28" aria-labelledby="empezando-titulo">
+    <section id="empezando" className="py-16 sm:py-24" aria-labelledby="empezando-titulo">
       <div className="container">
         <SectionHead
           n="07"
@@ -49,10 +52,17 @@ export default function Starting() {
           <div className="col-span-12 lg:col-span-5">
             <h3 className="text-h3">Qué incluye hoy</h3>
             <ul className="mt-5 divide-y divide-line border-y border-line">
-              {TODAY.map((t) => (
-                <li key={t} className="py-3 text-[15px] text-fg-slate">
+              {TODAY.map((t, i) => (
+                <InView
+                  as="li"
+                  key={t}
+                  y={24}
+                  margin={MARGIN}
+                  delayMs={Math.min(i, 6) * 60}
+                  className="py-3 text-[15px] text-fg-slate"
+                >
                   {t}
-                </li>
+                </InView>
               ))}
             </ul>
           </div>
@@ -67,12 +77,12 @@ export default function Starting() {
 
             <h3 className="mt-12 text-h3">Dos escenarios de ejemplo</h3>
             <div className="mt-5 grid gap-6 sm:grid-cols-2">
-              {SCENARIOS.map((s) => (
-                <div key={s.title} className="border-t border-line pt-4">
+              {SCENARIOS.map((s, i) => (
+                <InView key={s.title} y={24} margin={MARGIN} delayMs={i * 100} className="border-t border-line pt-4">
                   <p className="folio">Escenario de ejemplo</p>
                   <p className="mt-2 text-base font-bold text-fg">{s.title}</p>
                   <p className="mt-2 text-[15px] text-fg-medium">{s.text}</p>
-                </div>
+                </InView>
               ))}
             </div>
 

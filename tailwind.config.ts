@@ -87,6 +87,14 @@ const config: Config = {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         fade: { from: { opacity: "0" }, to: { opacity: "1" } },
+        "swap-in": {
+          from: { opacity: "0", transform: "translateY(24px)", filter: "blur(4px)" },
+          to: { opacity: "1", transform: "translateY(0)", filter: "blur(0px)" },
+        },
+        "swap-out": {
+          from: { opacity: "1", filter: "blur(0px)" },
+          to: { opacity: "0", filter: "blur(4px)" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -99,6 +107,8 @@ const config: Config = {
       animation: {
         rise: "rise 560ms cubic-bezier(0.22, 0.8, 0.24, 1) both",
         fade: "fade 320ms cubic-bezier(0.22, 0.8, 0.24, 1) both",
+        "swap-in": "swap-in 300ms ease-in-out both",
+        "swap-out": "swap-out 200ms ease-in-out both",
         "accordion-down": "accordion-down 260ms cubic-bezier(0.22, 0.8, 0.24, 1)",
         "accordion-up": "accordion-up 260ms cubic-bezier(0.22, 0.8, 0.24, 1)",
       },

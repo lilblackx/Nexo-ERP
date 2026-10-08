@@ -112,6 +112,18 @@ body > footer {
   content-visibility: auto;
   contain-intrinsic-size: auto 900px;
 }
+/* "Un día" y "Red local" miden mucho más que 900 px: un valor cercano evita saltos del scroll al renderizarse. */
+main > section#dia {
+  contain-intrinsic-size: auto 5200px;
+}
+main > section#red {
+  contain-intrinsic-size: auto 2100px;
+}
+@media (min-width: 1024px) {
+  main > section#dia {
+    contain-intrinsic-size: auto 8500px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -136,7 +136,7 @@ export default function Architecture() {
   const l = demo.license;
 
   return (
-    <section id="red" className="on-blue bg-primary-deep py-20 text-white sm:py-28" aria-labelledby="red-titulo">
+    <section id="red" className="on-blue bg-primary-deep py-16 text-white sm:py-24" aria-labelledby="red-titulo">
       <div className="container">
         <SectionHead
           n="06"

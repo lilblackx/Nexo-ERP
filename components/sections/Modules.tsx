@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import AppFrame, { type Crop, type FrameSpec } from "@/components/appframe/AppFrame";
 import SectionHead from "@/components/SectionHead";
 import { features } from "@/lib/features";
@@ -227,11 +227,53 @@ const MODULES: Mod[] = [
   },
 ];
 
+function Detail({ m }: { m: Mod }) {
+  return (
+    <>
+      <h3 className="text-h3">{m.name}</h3>
+      <p className="mt-3 max-w-[60ch] text-lead text-fg-medium">{m.lead}</p>
+      <ul className="mt-6 grid max-w-3xl gap-x-8 gap-y-3 text-body text-fg-slate sm:grid-cols-2">
+        {m.points.map((p) => (
+          <li key={p} className="flex gap-3">
+            <i aria-hidden className="mt-[0.7em] h-1 w-3 shrink-0 bg-primary" />
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+      {m.limits && (
+        <p className="mt-6 max-w-3xl border-l-2 border-warning pl-4 text-[15px] text-fg-medium">
+          <b className="text-fg">Límites. </b>
+          {m.limits}
+        </p>
+      )}
+      {m.frame && (
+        <div className="mt-8">
+          <AppFrame
+            {...m.frame.spec}
+            focus={m.frame.focus}
+            mobileFocus={m.frame.mobileFocus}
+            frameClassName="rounded border border-line"
+            caption={m.frame.caption}
+          />
+        </div>
+      )}
+    </>
+  );
+}
+
 export default function Modules() {
   const list = MODULES.filter((m) => m.show !== false);
-  const [sel, setSel] = useState(0);
+  // `prev` cambia junto con `sel`: la capa saliente conserva su key y no parpadea (igual que en DayStory).
+  const [{ sel, prev }, setStage] = useState<{ sel: number; prev: number | null }>({ sel: 0, prev: null });
+  const setSel = (next: number) => setStage((s) => (s.sel === next ? s : { sel: next, prev: s.sel }));
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const m = list[sel];
+
+  useEffect(() => {
+    if (prev === null) return;
+    const t = setTimeout(() => setStage((s) => (s.prev === prev ? { ...s, prev: null } : s)), 220);
+    return () => clearTimeout(t);
+  }, [prev]);
 
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
     const dir = e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" || e.key === "ArrowLeft" ? -1 : 0;
@@ -243,7 +285,7 @@ export default function Modules() {
   };
 
   return (
-    <section id="modulos" className="py-20 sm:py-28" aria-labelledby="modulos-titulo">
+    <section id="modulos" className="py-16 sm:py-24" aria-labelledby="modulos-titulo">
       <div className="container">
         <SectionHead
           n="04"
@@ -294,33 +336,19 @@ export default function Modules() {
             aria-labelledby={`mod-tab-${m.id}`}
             className="col-span-12 lg:col-span-8"
           >
-            <h3 className="text-h3">{m.name}</h3>
-            <p className="mt-3 max-w-[60ch] text-lead text-fg-medium">{m.lead}</p>
-            <ul className="mt-6 grid max-w-3xl gap-x-8 gap-y-3 text-body text-fg-slate sm:grid-cols-2">
-              {m.points.map((p) => (
-                <li key={p} className="flex gap-3">
-                  <i aria-hidden className="mt-[0.7em] h-1 w-3 shrink-0 bg-primary" />
-                  <span>{p}</span>
-                </li>
+            <div className="relative">
+              {(prev === null ? [sel] : [prev, sel]).map((i) => (
+                <div
+                  key={list[i].id}
+                  className={
+                    i === sel ? "animate-swap-in" : "pointer-events-none absolute inset-0 overflow-hidden animate-swap-out"
+                  }
+                  aria-hidden={i === sel ? undefined : true}
+                >
+                  <Detail m={list[i]} />
+                </div>
               ))}
-            </ul>
-            {m.limits && (
-              <p className="mt-6 max-w-3xl border-l-2 border-warning pl-4 text-[15px] text-fg-medium">
-                <b className="text-fg">Límites. </b>
-                {m.limits}
-              </p>
-            )}
-            {m.frame && (
-              <div key={m.id} className="mt-8 animate-fade">
-                <AppFrame
-                  {...m.frame.spec}
-                  focus={m.frame.focus}
-                  mobileFocus={m.frame.mobileFocus}
-                  frameClassName="rounded border border-line"
-                  caption={m.frame.caption}
-                />
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </div>

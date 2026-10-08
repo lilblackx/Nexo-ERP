@@ -108,7 +108,7 @@ export default function CutInternet() {
     <section
       id="sin-internet"
       ref={ref}
-      className="on-blue bg-primary-deep py-20 text-white sm:py-28"
+      className="on-blue bg-primary-deep py-16 text-white sm:py-24"
       aria-labelledby="sin-internet-titulo"
     >
       <div className="container">
