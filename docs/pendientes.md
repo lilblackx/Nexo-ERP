@@ -25,7 +25,8 @@ Buscar `TODO(luis)` en el código. Este es el resumen.
 - Renombrar la app a "Nexo ERP" (hoy el título de ventana y el instalador usan otro nombre).
 - Corregir textos: "RF Empresa" → "RIF Empresa", "Iniciar Sesion" → "Iniciar Sesión", "Password" → "Contraseña",
   "esta en modo solo lectura" → "está en modo solo lectura", columna "AGRANEL" → "A granel" / "Sueltas".
-- Capturas: `public/screens/` hoy tiene las del 2026-10-06; `tasas-cambio.png` falta (hay `tasa-cambio-brusco.png`).
+- Capturas: `public/screens/` tiene las 6 de la galería (`tasas-cambio.png` incluida), aprobadas con su huella. Hay que
+  recapturarlas cuando la app se renombre y se corrijan sus textos. `tasa-cambio-brusco.png` es solo un respaldo opcional.
 
 ## Assets que debes aportar
 - Capturas definitivas (ver `public/screens/README.md`) y, si quieres, la captura de Configuración > Licencia con "3 de 4".

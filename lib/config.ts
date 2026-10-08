@@ -24,14 +24,6 @@ export const SITE_URL = (
   "http://localhost:3000"
 ).replace(/\/+$/, "");
 
-/**
- * Las 6 capturas de la galería "La app, tal cual" van en /public/screens/ con estos nombres
- * (ver public/screens/README.md). Mientras sea false se muestra un marcador neutro: nunca las antiguas.
- * TODO(luis): reemplazar capturas. Copia las de reference/app/ (panel-general, facturacion, tasas-cambio,
- * productos, comisiones, reportes) a public/screens/ y pon esto en true.
- */
-export const REAL_SCREENSHOTS_READY = false;
-
 export const NAV_LINKS = [
   { href: "#sin-internet", label: "Sin internet" },
   { href: "#dia", label: "Un día" },
