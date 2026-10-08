@@ -1,7 +1,8 @@
 import Logo from "@/components/Logo";
 import MobileMenu from "@/components/MobileMenu";
 import { Button } from "@/components/ui/button";
-import { NAV_LINKS, WA_DEMO } from "@/lib/config";
+import NavLinks from "@/components/NavLinks";
+import { WA_DEMO } from "@/lib/config";
 import { RATES_LABEL, demo, num, pct } from "@/lib/demo";
 
 /**
@@ -37,15 +38,7 @@ export default function Header() {
           <Logo />
         </a>
 
-        <ul className="hidden items-center gap-6 lg:flex">
-          {NAV_LINKS.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-sm text-fg-medium transition-colors duration-200 hover:text-primary">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <NavLinks />
 
         <div className="flex items-center gap-2">
           <Button asChild size="sm" className="hidden sm:inline-flex">

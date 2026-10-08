@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import MobileCta from "@/components/MobileCta";
 import RealScreens from "@/components/sections/RealScreens";
 import Starting from "@/components/sections/Starting";
 import Faq from "@/components/sections/Faq";
@@ -31,6 +32,7 @@ export default function Home() {
         <LeadForm />
       </main>
       <Footer />
+      <MobileCta />
     </>
   );
 }
