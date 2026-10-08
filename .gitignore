@@ -13,3 +13,5 @@ next-env.d.ts
 out
 *.zip
 .next-build
+.next-a
+.next-b
