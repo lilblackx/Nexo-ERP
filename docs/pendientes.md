@@ -20,6 +20,9 @@ Buscar `TODO(luis)` en el código. Este es el resumen.
 - Rubros del formulario de contacto.
 - Mensajes de licencia por estado (el de "Validación pendiente" se redactó con la causa del brief).
 - Formato numérico definitivo dentro de los mockups (coma de miles, punto decimal).
+- Aviso de privacidad (`app/privacidad/page.tsx`): el texto es genérico; que lo revise quien corresponda antes de publicar.
+- Capacidad (módulo Red local y FAQ): cuántas cajas y estaciones soporta. La licencia admite de 1 a 1000, sin cifras probadas.
+- Límite "no hay comisión por meta ni escalonada" (módulo Comisiones): confirmar que es cierto antes de publicarlo.
 
 ## App (antes de recapturar)
 - Renombrar la app a "Nexo ERP" (hoy el título de ventana y el instalador usan otro nombre).
